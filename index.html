@@ -1,0 +1,3684 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="バドる">
+<meta name="mobile-web-app-capable" content="yes">
+<title>バドる</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAD8ElEQVR4nO3dTY7aQBSF0eoom2ATnmT/S8jEm/CARXQGCS1waCgb/HfrHIlBS9B48PH0bAnzUUr5LBDix9YHAO8kaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJsrPrQ8g0efv58/5+LX8cbToo5TyufVBpKgJeUzY7yXoN5gT8piw30PQL3hHyGPCfo2TwpmWiHnJ/9sKQc+wdHSink/QE60Vm6jnETRRBD3B2lPTlJ5O0EQRdKWtpqUpPY2giSLoCltPya3f/0gETRRBE0XQRBE0UQRNFEETRdBEETRRBF1h62+RbP3+RyJoogi60lZT0nSeRtBEEfQEa09L03k6QRNF0JX6vi+lrDc1Ted5BF2h7/tyOp3K+XwupSwfm5jnE/RES0ct5te4FdgTl+l8bRiG0nXd19/ubbcfJvREwzDcrB+l/I1xbpCvvJb/CfqBe9P52nXUpUyLU8jLcMPzCS7T+Vrf9zfrRylC3ZIJ/Y1n0/m714ynNusS9B1zYr52Pp+/rluzLkFXurdujK92sD1Bj7w6nUsR+pYEXeHedGafBH3lHdOZbQl6pvFa4cOwD4L+57sgrRvHImiiCLpMn86uYuxX80HbfbM0HzRZmg760XR2MnhMTQc9x7392dqyH80GvdR0dsK4rWaDJlOTQVsRcjUZ9COP1g3rxP41F7TpnK2poJ/F7FLd8TUV9Cu+WzdM/H1pJmjTuQ3NBE0bmgjaWtCOJoJ+5tm64XLdccQHveZ0Fv72ooOuidnJYJbooJdmN9+f2KDfFZs14lhig65h3cgTGbRVoF2RQdeomc7WjeOJC3rN6dx1XRmGYZX3ok5c0LVOp5MYA0UFPecm46LOEhX0Zd8dhuHm8cy959ifj6mJHw0aB3u9blz27Ve/6V1K8QHYgaigLyvHs7DGq4m1I0dU0LUT8vK8vu9vVoupV0j8MND+RAU9xb1p3nVd9ZRnn6JOCqe6F+3UkLuuE/+ONBv0owgFelwfpZTPrQ8C3qXZCU0mQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRPlD9vdK+1Vk2PJAAAAAElFTkSuQmCC">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEMklEQVR4nO3dTY7TQBSF0WrEFjLwJjJh/0tg4k14kEU0E9ykQ/4cl+Oy7zkSEqCo24P3PZfTgnyUUj4LhPqx9gXAmgRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAET7ufYFJPn8/fg1H7+Wvw7++SilfK59EXv2zNDfIoblCWAhcwb/khCW4xlgATWHf4mvxz8CqGypYRXBMgRQ0dJDKoL6BFDJu4ZTBHUJoIJ3D6UI6hHATGsNowjqEADRBDDD2lt47e+/BwIgmgCIJoAXtXL8aOU6tkoARBMA0QRANAEQTQBEEwDRBEA0ARBNAC9q5d/ptnIdWyUAogmAaAKYYe3jx9rffw8EQDQBzLTWFrb96xDADH3fl1LeP4yGvx4BvKjv+9J13def3zWUhr8uAcx0Op2+fr/0cBr++gTwgsvtPx6FSlluSA3/MgRQyZJ3AsO/HB+QMdHl9j83RnA4HL6G1ucDtE0AMw3D8F8Qp9OpHA6HUsr3IfYJMe0RwAT3tv+11x6Px29/Z7jb4xlghmvb/5q+7789I9AOATxpyvYfhuG/7T9+DdoigCdMGX62RQAvevb4Q9sE8MDU7X95/HH3aJsAXmD774cA7rC9908ARBPADbe2/73jz623P2mXAIgmgCtqnf3Pv467Q5sEMIF3f/ZHABde3f42/DYJ4Em2/z4J4Iz3/fMIoALHn+0SwF/3tr/jz34JYCGOU9sggGL7J4sPYO6mdv7ftvgA3kEk7YoO4NH2d/zZv+gAIDaAGtv/3v/+4M6xDbEBQCmhAdjQjCIDeGTO8YdtiQvA9udcXACPeOszS1QA79j+7jDbEhVALVPO/54V2hYTwDOb2fEnT0wAcE1EADW3vyPNvkQE8E7H47EMw7D2ZfCk3Qfw7LsyXdcZ3EC7D2AKEeTZdQBTP5NrHP5bETj/78+uAxiHdRiGb7/u6bquyp3AnWQbIj8n+HI4Lwd+3PR+qrt/uw5gPAI9OracH5XOjzlzI3Bkat9HKeVz7Ytowb1Yng3p/LUjAbRt188AU90a1leG2OBvgwD+ejSwUwba8G+HAIjmGYBo7gBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAET7A3C5PYTPERzIAAAAAElFTkSuQmCC">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIuODkOODieOCiyIsICJzaG9ydF9uYW1lIjogIuODkOODieOCiyIsICJkZXNjcmlwdGlvbiI6ICLjg5Djg4njg5/jg7Pjg4jjg7Plvpfngrnmnb/jgqLjg5fjg6oiLCAic3RhcnRfdXJsIjogIi4vaW5kZXguaHRtbCIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAib3JpZW50YXRpb24iOiAiYW55IiwgImJhY2tncm91bmRfY29sb3IiOiAiIzAwMDAwMCIsICJ0aGVtZV9jb2xvciI6ICIjMDAwMDAwIiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTUFBQUFEQUNBWUFBQUJTM0d3SEFBQUVNa2xFUVZSNG5PM2RUWTdUUUJTRjBXckVGakx3SmpKaC8wdGc0azE0a0VVMEU5eWtRLzRjbCtPeTd6a1NFcUNvMjRQM1BaZlRnbnlVVWo0TGhQcXg5Z1hBbWdSQU5BRVFUUUJFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BRVFUQU5FRVFEUUJFRTBBUkJNQTBRUkFOQUVRVFFCRUV3RFJCRUEwQVJCTkFFUVRBTkVFUURRQkVFMEFSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BRVQ3dWZZRkpQbjgvZmcxSDcrV3Z3NysrU2lsZks1OUVYdjJ6TkRmSW9ibENXQWhjd2Iva2hDVzR4bGdBVFdIZjRtdnh6OENxR3lwWVJYQk1nUlEwZEpES29MNkJGREp1NFpUQkhVSm9JSjNENlVJNmhIQVRHc05vd2pxRUFEUkJEREQybHQ0N2UrL0J3SWdtZ0NJSm9BWHRYTDhhT1U2dGtvQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BQzlxNWQvcHRuSWRXeVVBb2dtQWFBS1lZZTNqeDlyZmZ3OEVRRFFCekxUV0ZyYjk2eERBREgzZmwxTGVQNHlHdng0QnZLanYrOUoxM2RlZjN6V1Vocjh1QWN4ME9wMitmci8wY0JyKytnVHdnc3Z0UHg2RlNsbHVTQTMvTWdSUXlaSjNBc08vSEIrUU1kSGw5ajgzUm5BNEhMNkcxdWNEdEUwQU13M0Q4RjhRcDlPcEhBNkhVc3IzSWZZSk1lMFJ3QVQzdHYrMTF4NlB4MjkvWjdqYjR4bGdobXZiLzVxKzc3ODlJOUFPQVR4cHl2WWZodUcvN1Q5K0Rkb2lnQ2RNR1g2MlJRQXZldmI0UTlzRThNRFU3WDk1L0hIM2FKc0FYbUQ3NzRjQTdyQzk5MDhBUkJQQURiZTIvNzNqejYyM1AybVhBSWdtZ0N0cW5mM1B2NDY3UTVzRU1JRjNmL1pIQUJkZTNmNDIvRFlKNEVtMi96NEo0SXozL2ZNSW9BTEhuKzBTd0YvM3RyL2p6MzRKWUNHT1U5c2dnR0w3SjRzUFlPNm1kdjdmdHZnQTNrRWs3WW9PNE5IMmQvelp2K2dBSURhQUd0di8zdi8rNE02eERiRUJRQ21oQWRqUWpDSURlR1RPOFlkdGlRdkE5dWRjWEFDUGVPc3pTMVFBNzlqKzdqRGJFaFZBTFZQTy81NFYyaFlUd0RPYjJmRW5UMHdBY0UxRUFEVzN2eVBOdmtRRThFN0g0N0VNdzdEMlpmQ2szUWZ3N0xzeVhkY1ozRUM3RDJBS0VlVFpkUUJUUDVOckhQNWJFVGovNzgrdUF4aUhkUmlHYjcvdTZicXV5cDNBbldRYklqOG4rSEk0THdkKzNQUitxcnQvdXc1Z1BBSTlPcmFjSDVYT2p6bHpJM0JrYXQ5SEtlVno3WXRvd2IxWW5nM3AvTFVqQWJSdDE4OEFVOTBhMWxlRzJPQnZnd0QrZWpTd1V3YmE4RytIQUlqbUdZQm83Z0JFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BRVFUQU5FRVFEUUJFRTBBUkJNQTBRUkFOQUVRVFFCRUV3RFJCRUEwQVJCTkFFUVRBTkVFUURRQkVFMEFSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BRVQ3QTNDNVBZVFBFUnpJQUFBQUFFbEZUa1N1UW1DQyIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn0sIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBWUFBQUQwZU5UNkFBQU5xRWxFUVZSNG5PM2RPM2JiV0JhR1VhaVhwK0JBazFCUzh4OUNKWnlFQWc5Q0ZYU3ppK0tpU0lLNDczL3ZxRmE5RE1IQitjNEZTTDl0Mi9hMUFRQlIvdFA3QWdDQTlnUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRS0JmdlM4QXFPZnI3OWYvMjdlL3lsMEhNSjYzYmR1K2VsOEVjTnlSWWY4c1VRRHJFQUF3c1JaRC95ZGlBT1ltQUdBeVBZZitUOFFBekVjQXdDUkdIUHpYaEFETVF3REE0R1lZL05lRUFJeFBBTUNnWmh6ODE0UUFqRXNBd0dCV0dQelhoQUNNeHhjQndVQldIUDdidHU3UEJUTnpBZ0FEU0JxUVRnTmdERTRBb0xPazRiOXRlVDh2akVvQVFFZXB3ekQxNTRhUmVBUUFIUmlBLy9KSUFQcHdBZ0NOR2Y3ZnVSL1Fod0NBaGd5NzI5d1hhRThBUUNPRzNIM3VEN1FsQUtBQncrMDU3aE8wSXdBQUlKQUFnTXBzdGZ1NFg5Q0dBSUNLRExQWHVHOVFud0NBU2d5eFk5dy9xRXNBQUVBZ0FRQVYyRjdMY0IraEhnRUFoUmxhWmJtZlVJY0FBSUJBQWdBS3NxM1c0YjVDZVFJQUFBSUpBQ2pFbGxxWCt3dGxDUUFBQ0NRQW9BRGJhUnZ1TTVRakFBQWdrQUNBZzJ5bGJibmZVSVlBQUlCQUFnQUFBZ2tBT01CeGRCL3VPeHduQUFBZ2tBQUFnRUFDQUY3a0dMb3Y5eCtPRVFBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQVBBQ0w2Q053ZThEdkU0QUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBdk9EdHI5NVh3TGI1ZllBakJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFMeklDMmg5dWY5d2pBQUFnRUFDQUFBQ0NRQTR3REYwSCs0N0hDY0FBQ0NRQUFDQVFBSUFEbkljM1piN0RXVUlBQUFJSkFDZ0FGdHBHKzR6bENNQUFDQ1FBSUJDYktkMXViOVFsZ0FBZ0VBQ0FBcXlwZGJodmtKNUFnQUFBZ2tBS015MldwYjdDWFVJQUtqQTBDckRmWVI2QkFBQUJCSUFVTkRwZE5yKy9QbXpiWnZ0OVNqM0Qrb1NBRkRJNlhUYTN0L2Z0MjNiUk1CQjdodlVKd0NnTXNOc0gvY0wyaEFBVU1EbDluOTJQZ1VBR0pFQWdJbzhDdGpIZllKMkJBQWNkR3Y3dnlRQ251UCtRRnNDQUJvUUFmZTVMOUNlQUlBREhtMy9sMFRBYmU0SDlDRUFvSkhQejg5dkVaQSsrTndENkVzQXdJdjJiUCtYTGo4ZGtEb0FVMzl1R0lrQWdBNlNJeUR0NTRWUnZXM2I5dFg3SW1BMmU3Zi96OC9QSC8vOTM3OS8vLyt2di80K2ZHbkRNdmhoTEU0QW9MT0UwNEJWZnk2WW1STUEyS25rOW4vcDhpUmcyOVk0RFRENFlWeS9lbDhBek9UVkYvK2VjVDRKT0lmQWVYak9HQUlHUDR4UEFFQkZ6MjcvbDJZT0FZTWY1dUVkQUhoU3plMy9sdXMvVEdqa3o4MlBmRzNBYlU0QVlHQ24wMm43K1BqNDl2Y3VCMjNQVXdFREgrYm1KVUI0d2l2Yi95dkgvOWYvL2ZYd3Y2ZEZEQmo2c0E0bkFMQ0lXOFA1U0JRWTlyQTJBUUFQOU5qK24zRjlYZGNmSTl3MlF4ejRtUUNBUlZ5K05MajM4UUdReDZjQTRJN1diLzZmR2VCQWJRSUFDbXR4L0E5d2xBQ0FIL1RhL2dGYUVBQlFrTzBmbUlVQWdCdDZidi9QUFArL2QzM2VId0NlSVFEZ2lxTi9JSUVBZ0VJYy93TXpFUUJ3b2ZmMjcvZ2VhRVVBUUFHMmYyQTJBZ0QrcC9mMkQ5Q1NBQUNBUUFJQXRtUGJmNm5qLzJlZi96dXBBRW9RQUFBUVNBQVFiNFR0SDZBMUFRQURLUFh4UHg4akJKNGxBSWptZVRxUVNnREFpeHovQXpNVEFNU2FjZnVmOFpxQk1Ra0FJaDBkcENXM2Y4L3RnUjRFQUFBRUVnREVHV243QitoRkFBQkFJQUZBbE5GZW92UDhIK2hGQU1BT2p2K0JWUWdBWW95Mi9lLzE2UHFkSmdCN0NBQjRVdW50MzhBR2VoSUFSSmg5K3djb1RRQUFRQ0FCd1BKS2JQOWUvZ05XSXdDZ0E4Ly9nZDRFQUV1ei9RUGNKZ0JnQWw1aUJFb1RBQ3hyMUtIcCtCOFlnUUJnU2FXR3YrTi9ZRlVDQUJiZ1ZBSFlTd0N3SE5zL3dHTUNBQnF5cVFPakVBQXNaZFFYLzQ1WThXY0MraE1BY0lQamYyQjFBb0JsMkpRQm5pY0E0RXF0N2QvemYyQWtBb0FsMlA0QjloRUFBQkJJQURDOWt0di9qTWYvSGkwQXJ4QUFNRENQTm9CYUJBQlRtMkg3QnhpUkFHQmF0bU9BMXdrQXFNd3plbUJFQW9BcGxkNytIZjhEYVFRQUFBUVNBRXhucHUzL3lQRy9keHlBbWdRQUFBUVNBRXhscHUwZllHUUNBQ2JtRXdiQXF3UUEwNWp0bWJqaERJeE1BQkRMOFQrUVRBQXdoZG0yZjREUkNRQWlqYjc5Q3g2Z05nSEE4R1ljaHA3L0E2TVRBQXh0eHVFUE1BTUJRSnpSai84QldoQUFER3ZXN2QveFB6QURBVUFVMnovQWZ3a0FoalRyOWwvQ3N6Kzdrd2JnQ0FFQUFJRUVBTU9wdGYyM09QNjNsUU96RUFBQUVFZ0FNSlNadDMrQW1RZ0FLTVR4UHpBVEFjQXdrdC84QjJoTkFMQzhtWTcvUlJEUWlnQmdDQVlmUUZzQ2dPNXFEdjlXMjcvbi84QnNCQUJNU0hBQVJ3a0F1bkwwRDlDSEFHQlpNNzM4QjlDYUFLQ2JWYloveC9IQWpBUUFTNXB4KzE4bGlJQTVDQUM2TU93QStoSUFMS2ZsOXUvNEg1aVZBS0E1Mno5QWZ3SUFBQUlKQUpxcXZmM1ArUElmUUE4Q0FGNVU4dm4vbmpEeTNnRlFnZ0NnR2RzL3dEZ0VBRTE0OFE5Z0xBSUFYdUFZSHBpZEFLQzZGdHUvNDMrQWZRUUFET0RqNDJQNy9QenNmUmxBRUFGQVZiWi9nREVKQU5qSjgzOWdCUUtBYWxxOStmLysvdTc0SEdBbkFjQVNWb2dBN3dFQUxRa0FxdWp4dWY4Vkl1QVJqeCtBVWdRQVM2a2RBUVl3c0FvQlFIRzl2L1V2NFNRQTRDZ0J3TEptakFEdkFRQ3RDQUNLT3AxT3ZTL2gyekY5eVdIcStCOVl5YS9lRjhCYXpnUHlPZ1I2UFJJNFB3N3dSVUVBM3drQXF2ajQrUGoyTHNEMUpsNXJJSiszOU10ZmU2WUlHT0VFQmNnZ0FHamlldmkyQ29MTC8vOHNFVERUdFFMekVnQlU4ZWlUQVBlQzRPamcrK25YUGpKWVBmOEhWaU1BNk9MNkJPQnl1TDc2L3NEbDhUOEE5d2tBaXJ1MWdkOGIrTmV1LzFtcEZ3cHZ2Ujh3RTZjUVFFa0NnQ3IyRFB4SG5nbUNSOFA5Y25qdWpZRFdnM2YyVUFIbUlBQW82anljYXc3TVIwRnc3ZFlBTjJDQmRBS0Fvbm9jVWQvN05lOXQ3Nk5Gd1BsYWZCTWcwSUp2QW1RWjE4UDhtYU43WDcwTHBCSUFMR25QYy90N0VkRHIrZitqNndJNFNnQ3doT3R2SGR3N3RBMWJJSTBBWUNsSE5uWVJBQ1FSQUN5anhIRzlDQUJTQ0FDbVYvcWpoK2NJNlBIRk83YytyaWhJZ0JvRUFFc29QYWhIKzhZOTN3SUlsQ1lBbUY2dHdkaHk0UHJ6QzREV0JBQUFCQklBTUloNzMxZ0lVSm9BQUlCQWI5dTJmZlcrQ0FDZ0xTY0FBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCL2dIb2tubER6NTVrbWdBQUFBQkpSVTVFcmtKZ2dnPT0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
+<style>
+:root{
+  --bg:#000000;
+  --white:#ffffff;
+  --yellow:#ffd400;
+  --orange:#ff8c1a;
+  --dim:#6b6b6b;
+  --panel:#111214;
+  --line:#2a2c30;
+  --accent:#3b82f6;
+  --danger:#e5484d;
+
+  /* ---- 柔らかい配色（設定画面・ボタン・スコアシート用） ---- */
+  --soft-bg:#fdf6ee;
+  --soft-surface:#ffffff;
+  --soft-card:#fffaf3;
+  --soft-primary:#ffa374;
+  --soft-primary-dark:#ec8552;
+  --soft-secondary:#8fd0c3;
+  --soft-secondary-dark:#5fb3a3;
+  --soft-danger:#f2968a;
+  --soft-danger-dark:#e17a6d;
+  --soft-text:#5c4a3a;
+  --soft-text-dim:#a6917e;
+  --soft-border:#f0e2d0;
+  --soft-shadow:0 6px 16px rgba(180,140,100,0.16);
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent; user-select:none;}
+html,body{
+  margin:0; padding:0; width:100%; height:100%;
+  background:var(--bg); color:var(--white);
+  font-family:"Hiragino Sans","Yu Gothic",system-ui,-apple-system,sans-serif;
+  overscroll-behavior:none;
+  overflow:hidden;
+}
+#app{ position:fixed; inset:0; }
+
+/* ---------- 横固定（縦持ち時は回転させて横画面として扱う） ---------- */
+.rotor{
+  position:fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  transform-origin:center center;
+  display:none;
+  pointer-events:none;
+}
+.rotor.active{
+  display:block;
+  pointer-events:auto;
+}
+@media (orientation:portrait){
+  .rotor.active{
+    width:100vh;
+    height:100vw;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%) rotate(90deg);
+  }
+}
+
+/* ---------- スコアボード画面 ---------- */
+#board{
+  position:relative;
+  width:100%; height:100%;
+  display:none;
+  flex-direction:column;
+  background:var(--bg);
+}
+#board.active{ display:flex; }
+
+.board-main{
+  flex:1;
+  display:flex;
+  min-height:0;
+}
+.side{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  position:relative;
+  padding:1vh 3.2vw;
+  min-width:0;
+  min-height:0;
+  border-right:1px solid #1a1a1a;
+}
+.side:last-child{ border-right:none; }
+.side.serving{ background:rgba(255,212,0,0.05); }
+
+.score-zone{
+  flex:1;
+  min-height:0;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.score-num{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.plain-score-digits{
+  font-family:"DIN Alternate","Roboto Condensed","Arial Narrow",Arial,sans-serif;
+  font-weight:900;
+  font-variant-numeric:tabular-nums lining-nums;
+  color:#f8f8f8;
+  line-height:0.92;
+  letter-spacing:-0.035em;
+  text-shadow:0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* ---------- フリップボード風スコアカード ---------- */
+.flip-card{
+  position:relative;
+  height:min(38vh, 32vw);
+  aspect-ratio:0.68;
+  background:linear-gradient(180deg, #1e1e1e 0%, #131313 49%, #0c0c0c 51%, #060606 100%);
+  border:1px solid #2e2e2e;
+  border-radius:10px;
+  box-shadow:0 10px 22px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.flip-card::before{
+  content:'';
+  position:absolute;
+  left:5%; right:5%; top:50%;
+  height:2px;
+  background:rgba(0,0,0,0.55);
+  box-shadow:0 1px 0 rgba(255,255,255,0.05);
+}
+.flip-card .ring{
+  position:absolute;
+  top:-6%;
+  width:11%;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #d8d8d8, #7a7a7a 55%, #3a3a3a 100%);
+  box-shadow:0 1px 2px rgba(0,0,0,0.7);
+}
+.flip-card .ring.l{ left:14%; }
+.flip-card .ring.r{ right:14%; }
+.flip-card .digit{
+  font-size:0.68em;
+  font-weight:900;
+  line-height:1;
+  color:var(--white);
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 3px 0 rgba(0,0,0,0.55);
+  -webkit-text-stroke:0.5px rgba(0,0,0,0.25);
+  transform:translateY(-2%);
+  transition:color .15s;
+}
+.side.serving .flip-card .digit{ color:var(--yellow); }
+.flip-card:nth-child(1){ transform:rotate(-1.6deg); }
+.flip-card:nth-child(2){ transform:rotate(1.2deg); }
+
+.court-slots{
+  flex:0 0 auto;
+  display:flex;
+  gap:3vw;
+  margin-top:0.6vh;
+  width:100%;
+  justify-content:center;
+}
+.slot{
+  flex:0 1 auto;
+  min-width:0;
+  max-width:46%;
+  text-align:center;
+  font-size:min(4.2vw, 4.6vh);
+  font-weight:700;
+  color:var(--white);
+  padding:0.4vh 0.8vw;
+  border-radius:8px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  transition:opacity .15s;
+}
+.slot.empty{ visibility:hidden; }
+.slot.server{ color:var(--orange); }
+.slot.active-box{ box-shadow:inset 0 -3px 0 currentColor; }
+/* シングルスは選手名を各スコアの真下中央に固定 */
+.court-slots .slot.singles-player{
+  flex:0 1 92%;
+  max-width:92%;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center;
+}
+
+.mid-divider{
+  width:3px;
+  align-self:stretch;
+  margin:0 0.6vw;
+  background:linear-gradient(to bottom, transparent, #444 12%, #444 88%, transparent);
+}
+
+.game-target-badge{
+  position:absolute;
+  top:1.2vh;
+  left:1.5vw;
+  transform:none;
+  max-width:24%;
+  font-size:min(2.6vw,2.4vh);
+  color:var(--dim);
+  letter-spacing:0.05em;
+  white-space:nowrap;
+}
+
+.set-status{
+  position:absolute;
+  top:1.2vh;
+  left:50%;
+  right:auto;
+  transform:translateX(-50%);
+  max-width:48%;
+  font-size:min(2.4vw,2.2vh);
+  color:var(--dim);
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* スコア画面の下部操作は端末サイズに関係なく盤面内へ固定する。
+   スマホ横画面でもブラウザUI/セーフエリアで画面外へ押し出されないよう、
+   vh ではなく実寸ベースの高さを確保する。 */
+#board{
+  padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px));
+}
+#board .controls{
+  position:absolute;
+  left:0; right:0;
+  bottom:0;
+  z-index:30;
+  height:calc(64px + env(safe-area-inset-bottom, 0px));
+  min-height:64px;
+  padding:6px 12px calc(6px + env(safe-area-inset-bottom, 0px));
+}
+#board .controls button{
+  min-height:50px;
+}
+@media (orientation:landscape) and (max-height:760px){
+  #board{ padding-bottom:calc(58px + env(safe-area-inset-bottom, 0px)); }
+  #board .controls{
+    height:calc(58px + env(safe-area-inset-bottom, 0px));
+    min-height:58px;
+    padding:4px 8px calc(4px + env(safe-area-inset-bottom, 0px));
+    gap:8px;
+  }
+  #board .controls button{
+    min-height:48px;
+    font-size:clamp(17px,2.2vw,22px);
+  }
+  #board .court-slots{ min-height:56px; }
+  #board .slot{ font-size:clamp(20px,3vw,34px); }
+}
+
+/* ---------- 下部ボタン行 ---------- */
+.controls{
+  display:flex;
+  height:9vh;
+  min-height:52px;
+  border-top:1px solid #1c1c1c;
+  background:#050505;
+  gap:1.5vw;
+  padding:0.8vh 1.5vw;
+}
+.controls button{
+  flex:1;
+  background:rgba(255,255,255,0.06);
+  color:var(--white);
+  border:none;
+  border-radius:12px;
+  font-size:min(3.4vw,2.4vh);
+  font-weight:600;
+  letter-spacing:0.05em;
+}
+.controls button:active{ background:rgba(255,255,255,0.14); }
+.controls button.undo-btn{ color:var(--soft-text-dim); }
+.controls button.change-btn{ color:var(--soft-secondary); }
+.controls button.stop-btn{ color:var(--soft-danger); }
+.controls button:disabled{ color:#3a3a3a; }
+
+
+
+/* ===== iPad 9 / 会場遠距離視認性向上 ===== */
+/* 得点を画面の主役にし、選手名・ゲームカウントも離れた場所から判読しやすくする */
+#board .side{
+  padding:0.3vh 1.4vw 0.45vh;
+}
+#board .score-zone{
+  flex:1 1 auto;
+  width:100%;
+}
+#board .plain-score-digits{
+  font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;
+  font-weight:900;
+  line-height:.84;
+  letter-spacing:-.055em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+#board .court-slots{
+  gap:1.6vw;
+  margin-top:0;
+  min-height:9vh;
+  align-items:center;
+}
+#board .slot{
+  max-width:48%;
+  font-family:"Helvetica Neue","Noto Sans JP",Arial,sans-serif;
+  font-size:clamp(24px,3.35vw,46px);
+  font-weight:800;
+  line-height:1.05;
+  padding:.15vh .45vw .55vh;
+  text-shadow:0 1px 2px rgba(0,0,0,.65);
+}
+#board .set-status{
+  top:.55vh;
+  max-width:34%;
+  font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;
+  font-size:clamp(28px,3.2vw,48px);
+  font-weight:900;
+  line-height:1;
+  color:#fff;
+  letter-spacing:.08em;
+  text-shadow:0 2px 4px rgba(0,0,0,.7);
+  overflow:visible;
+}
+#board .game-target-badge{
+  top:.8vh;
+  font-size:clamp(18px,1.8vw,28px);
+  font-weight:700;
+}
+#board .controls{
+  height:7.5vh;
+  min-height:48px;
+  padding:.55vh 1.2vw;
+}
+#board .controls button{
+  font-size:clamp(18px,2vw,28px);
+  font-weight:700;
+}
+@media (min-width:900px) and (orientation:landscape){
+  #board .side{ padding-left:.9vw; padding-right:.9vw; }
+  #board .court-slots{ min-height:10vh; }
+  #board .slot{ font-size:clamp(30px,3.15vw,50px); }
+  #board .set-status{ font-size:clamp(34px,3.4vw,52px); }
+}
+
+/* iPad/Safari: ブラウザのアドレスバーで100vhが実表示領域より大きくなる場合でも
+   Undo・棄権・開始取消を必ず画面内に固定する。 */
+@supports (height: 100dvh){
+  .rotor{ height:100dvh; }
+  #app{ height:100dvh; }
+}
+@media (min-width:900px) and (orientation:landscape){
+  #board{ padding-bottom:calc(68px + env(safe-area-inset-bottom, 0px)); }
+  #board .controls{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    z-index:20;
+    height:calc(68px + env(safe-area-inset-bottom, 0px));
+    min-height:68px;
+    background:#050505;
+    border-top:1px solid #2a2a2a;
+  }
+  #board .controls button{
+    min-height:48px;
+    font-size:clamp(20px,2.05vw,30px);
+  }
+}
+
+/* ---------- 設定画面（縦画面固定・柔らかい配色・大きめUI） ---------- */
+#settings{
+  position:relative;
+  width:100%; height:100%;
+  overflow-y:auto;
+  background:var(--soft-bg);
+  color:var(--soft-text);
+  padding:28px 20px 48px;
+  display:none;
+}
+#settings.active{ display:block; }
+#settings > *{
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.settings-title{
+  font-size:clamp(24px, 7vw, 30px);
+  font-weight:800;
+  margin:4px auto 22px;
+  display:flex;
+  align-items:center;
+  gap:0.5em;
+  color:var(--soft-text);
+}
+.settings-title .shuttle{ font-size:1.1em; }
+.settings-title-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.settings-title-row .settings-title{ margin:4px 0 22px; }
+.court-badge{
+  font-weight:800;
+  color:#fff;
+  background:linear-gradient(135deg, var(--soft-primary), var(--soft-primary-dark));
+  border-radius:999px;
+  letter-spacing:0.03em;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+  z-index:20;
+  white-space:nowrap;
+}
+.court-badge-settings{
+  position:fixed;
+  top:14px;
+  right:14px;
+  padding:8px 16px;
+  font-size:clamp(14px, 4vw, 17px);
+}
+.court-badge-settings{cursor:pointer;user-select:none;}
+.court-badge-settings:active{transform:scale(.97);}
+.dispatch-wait{display:none;margin:18px 0 24px;padding:28px 18px;border:2px dashed var(--soft-border);border-radius:20px;text-align:center;background:rgba(255,255,255,.62);color:var(--soft-text);}
+.dispatch-wait.show{display:block;}
+.dispatch-wait .main{font-size:clamp(30px,8vw,44px);font-weight:900;letter-spacing:.06em;}
+.dispatch-wait .sub{margin-top:8px;font-size:clamp(13px,3.2vw,16px);color:var(--soft-text-dim);font-weight:600;}
+#courtSelectOverlay .confirm-box{width:min(92vw,520px);}
+#courtSelectButtons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+#courtSelectButtons button{padding:14px 8px;border:1px solid var(--soft-border);border-radius:14px;background:#fff;color:var(--soft-text);font-weight:800;font-size:18px;}
+#courtSelectButtons button.current{background:var(--soft-primary);color:#fff;border-color:transparent;}
+.court-badge-board{
+  position:absolute;
+  top:1vh;
+  right:1.2vw;
+  left:auto;
+  transform:none;
+  padding:0.65vh 1.7vw;
+  font-size:min(3.4vw, 2.8vh);
+  background:var(--yellow);
+  color:#111;
+  border:2px solid rgba(255,255,255,.9);
+  box-shadow:0 4px 14px rgba(0,0,0,.55);
+}
+.help-btn{
+  flex-shrink:0; width:34px; height:34px; border-radius:50%;
+  background:var(--soft-surface); border:1.5px solid var(--soft-border);
+  color:var(--soft-text-dim); font-size:16px; font-weight:800;
+}
+.help-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+.help-modal-bg.active{display:flex}
+.help-modal-box{background:var(--soft-surface,#fff);border-radius:18px;padding:22px;max-width:420px;width:100%;max-height:82vh;display:flex;flex-direction:column;color:var(--soft-text,#222)}
+.help-modal-box h2{font-size:18px;font-weight:800;margin-bottom:14px}
+.help-modal-scroll{overflow-y:auto;flex:1;padding-right:4px}
+.help-modal-section{margin-bottom:16px}
+.help-modal-section-title{font-size:14px;font-weight:700;margin-bottom:5px}
+.help-modal-list{margin:0;padding-left:18px}
+.help-modal-list li{font-size:12.5px;line-height:1.7;margin-bottom:4px;opacity:.85}
+.help-modal-list b{opacity:1}
+.help-modal-close{margin-top:14px;width:100%;padding:12px 0;border:none;border-radius:12px;background:var(--accent,#d63800);color:#fff;font-size:15px;font-weight:700}
+
+/* 大会Now連携中は、選手名の左右入替・ファーストサーバー/レシーバー選択・試合開始以外を非表示にする */
+#settings.taika-locked .field-type,
+#settings.taika-locked .field-format,
+#settings.taika-locked .field-points,
+#settings.taika-locked .field-deuce,
+#settings.taika-locked .field-tournament-info{
+  display:none;
+}
+/* 大会Now連携済みでも、別大会・別コートへ切り替えられるようQR読込ボタンは残す */
+#settings.taika-locked .taika-link-inputs .two-col,
+#settings.taika-locked .taika-link-inputs .seg{
+  display:none;
+}
+#settings.taika-locked .taika-link-inputs #scanTaikaQrBtn{
+  display:block;
+  width:100%;
+  margin-top:0;
+}
+#settings.taika-locked .field-names input[type="text"]{
+  background:var(--soft-surface-dim, #f0eee9);
+  color:var(--soft-text-dim);
+}
+
+.field{
+  margin-bottom:22px;
+}
+.field label{
+  display:block;
+  font-size:clamp(15px, 4.2vw, 17px);
+  font-weight:600;
+  color:var(--soft-text-dim);
+  margin-bottom:10px;
+  letter-spacing:0.02em;
+}
+.seg{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.seg button{
+  flex:1;
+  min-width:96px;
+  min-height:52px;
+  padding:14px 8px;
+  background:var(--soft-surface);
+  border:1.5px solid var(--soft-border);
+  color:var(--soft-text);
+  border-radius:14px;
+  font-size:clamp(16px, 4.5vw, 19px);
+  font-weight:700;
+  box-shadow:var(--soft-shadow);
+}
+.seg button.on{
+  background:var(--soft-primary);
+  color:#fff;
+  border-color:var(--soft-primary);
+}
+input[type="text"], input[type="number"]{
+  width:100%;
+  height:52px;
+  min-height:52px;
+  padding:12px 14px;
+  background:var(--soft-surface);
+  border:1.5px solid var(--soft-border);
+  color:var(--soft-text);
+  border-radius:12px;
+  font-size:clamp(16px, 4.5vw, 19px);
+  box-sizing:border-box;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+  margin:0;
+}
+select{
+  width:100%;
+  min-height:52px;
+  padding:12px 14px;
+  background:var(--soft-surface);
+  border:1.5px solid var(--soft-border);
+  color:var(--soft-text);
+  border-radius:12px;
+  font-size:clamp(16px, 4.5vw, 19px);
+}
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.two-col-swap{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:8px;
+  align-items:center;
+}
+.swap-btn{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--soft-surface);
+  border:1.5px solid var(--soft-border);
+  color:var(--soft-primary-dark);
+  font-size:20px;
+  font-weight:800;
+  box-shadow:var(--soft-shadow);
+}
+.swap-btn:active{ background:var(--soft-primary); color:#fff; }
+.team-block{
+  background:var(--soft-card);
+  border:1.5px solid var(--soft-border);
+  border-radius:16px;
+  padding:16px 14px;
+  margin-bottom:12px;
+  box-shadow:var(--soft-shadow);
+}
+.team-block .team-label{
+  font-size:clamp(14px, 4vw, 16px);
+  color:var(--soft-text-dim);
+  margin-bottom:10px;
+  font-weight:700;
+}
+.team-block input{ margin-bottom:10px; }
+.team-block input:last-child{ margin-bottom:0; }
+
+.deuce-max-row{ display:none; margin-top:14px; }
+.deuce-max-row.show{ display:block; }
+.custom-points-row{ display:none; margin-top:14px; }
+.custom-points-row.show{ display:block; }
+
+.start-btn{
+  display:block;
+  width:100%;
+  min-height:60px;
+  padding:18px 0;
+  background:linear-gradient(135deg, var(--soft-primary), var(--soft-primary-dark));
+  color:#fff;
+  border:none;
+  border-radius:16px;
+  font-size:clamp(19px, 5.5vw, 23px);
+  font-weight:800;
+  margin:24px auto 0;
+  box-shadow:var(--soft-shadow);
+}
+.start-btn:disabled{
+  background:#cfd3d8;
+  color:#7a8088;
+  box-shadow:none;
+  cursor:not-allowed;
+  opacity:1;
+}
+.hint{
+  font-size:clamp(13px, 3.6vw, 15px);
+  color:var(--soft-text-dim);
+  margin-top:8px;
+  line-height:1.5;
+}
+.err{
+  color:var(--soft-danger-dark);
+  font-size:clamp(14px, 4vw, 16px);
+  font-weight:600;
+  margin-top:12px;
+  min-height:1em;
+}
+
+.icon-shuttle{ display:inline-block; }
+
+.past-matches{
+  margin-top:32px;
+  border-top:1.5px solid var(--soft-border);
+  padding-top:20px;
+}
+.past-matches h3{
+  font-size:clamp(16px, 4.5vw, 18px);
+  color:var(--soft-text-dim);
+  margin:0 0 12px;
+  font-weight:700;
+}
+.past-row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid var(--soft-border);
+  font-size:clamp(14px, 4vw, 16px);
+  color:var(--soft-text);
+}
+.past-row button{
+  background:none;
+  border:none;
+  color:var(--soft-primary-dark);
+  font-size:inherit;
+  font-weight:600;
+}
+
+/* 設定を開く小ボタン（試合中） */
+.gear-btn{
+  position:absolute;
+  top:1vh; left:1vw;
+  width:8vw; height:8vw;
+  max-width:44px; max-height:44px;
+  min-width:32px; min-height:32px;
+  background:rgba(255,255,255,0.06);
+  border:none;
+  border-radius:50%;
+  color:var(--soft-text-dim);
+  font-size:min(3vw,2.4vh);
+  z-index:5;
+}
+
+/* ---------- スコアシート（モーダル・柔らかい配色） ---------- */
+#sheetOverlay{
+  position:fixed; inset:0;
+  background:rgba(92,74,58,0.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:50;
+  padding:2vh 2vw;
+}
+#sheetOverlay.active{ display:flex; }
+.sheet{
+  background:var(--soft-bg);
+  border:1px solid var(--soft-border);
+  border-radius:20px;
+  width:100%;
+  max-width:640px;
+  max-height:94vh;
+  overflow-y:auto;
+  padding:3vh 3vw;
+  color:var(--soft-text);
+  box-shadow:0 12px 30px rgba(92,74,58,0.25);
+}
+.sheet h2{
+  margin:0 0 0.4vh;
+  font-size:min(4vw,3vh);
+  color:var(--soft-text);
+}
+.sheet .sub{
+  color:var(--soft-text-dim);
+  font-size:min(2.4vw,1.9vh);
+  margin-bottom:2vh;
+}
+.sheet-result{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--soft-surface);
+  border:1px solid var(--soft-border);
+  border-radius:16px;
+  padding:2vh 2vw;
+  margin-bottom:2vh;
+  box-shadow:var(--soft-shadow);
+}
+.sheet-result .name{ font-size:min(3vw,2.2vh); color:var(--soft-text); }
+.sheet-result .name.win{ color:var(--soft-primary-dark); font-weight:800; }
+.sheet-result .final-score{
+  font-size:min(6vw,4.4vh);
+  font-weight:800;
+  color:var(--soft-text);
+}
+table.sheet-log{
+  width:100%;
+  border-collapse:collapse;
+  font-size:min(2.4vw,1.8vh);
+  margin-bottom:2vh;
+}
+table.sheet-log th, table.sheet-log td{
+  border-bottom:1px solid var(--soft-border);
+  padding:0.7vh 0.4vw;
+  text-align:center;
+}
+table.sheet-log th{ color:var(--soft-text-dim); font-weight:600; }
+
+/* ---------- 公式様式ヘッダー（期日・大会名等 ＋ 氏名登録表） ---------- */
+.sheet-header-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(260px,2fr) minmax(0,1fr);
+  grid-template-rows:repeat(4, auto);
+  gap:4px 10px;
+  margin-bottom:16px;
+  font-size:clamp(12px, 3.2vw, 14px);
+}
+.info-line{
+  display:flex;
+  align-items:flex-end;
+  gap:4px;
+  border-bottom:1px dashed var(--soft-border);
+  padding-bottom:3px;
+  color:var(--soft-text);
+  min-width:0; /* グリッド内でnowrapの値が列全体を押し広げてしまうのを防ぐ */
+}
+.sheet-header-grid > .info-line:nth-child(1){ grid-column:1; grid-row:1; }
+.sheet-header-grid > .info-line:nth-child(2){ grid-column:3; grid-row:1; }
+.sheet-header-grid > .info-line:nth-child(3){ grid-column:1; grid-row:2; }
+.sheet-header-grid > .info-line:nth-child(4){ grid-column:3; grid-row:2; }
+.sheet-header-grid > .info-line:nth-child(5){ grid-column:1; grid-row:3; }
+.sheet-header-grid > .info-line:nth-child(6){ grid-column:3; grid-row:3; }
+.sheet-header-grid > .info-line:nth-child(7){ grid-column:1; grid-row:4; }
+.sheet-header-grid > .info-line:nth-child(8){ grid-column:3; grid-row:4; }
+.info-line .lbl{ color:var(--soft-text-dim); white-space:nowrap; flex-shrink:0; }
+.info-line .val{ font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
+/* 大会名だけは省略せず2行まで折り返して表示する（長い大会名で中央の名前欄が圧迫されないように） */
+.info-line.val-wrap .val{
+  white-space:normal;
+  overflow-wrap:anywhere;
+  text-overflow:clip;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  line-height:1.25;
+}
+
+.name-score-table{
+  grid-column:2;
+  grid-row:1 / span 3;
+  border-collapse:collapse;
+  width:100%;
+  height:100%;
+}
+.name-score-table td{
+  border:1px solid var(--soft-border);
+  text-align:center;
+  padding:2px 4px;
+}
+.name-score-table .lr-tab{
+  font-size:13px;
+  font-weight:700;
+  color:var(--soft-text-dim);
+  width:16px;
+  background:var(--soft-card);
+}
+.name-score-table .name-box{
+  font-weight:800;
+  font-size:clamp(13px, 3.6vw, 16px);
+  line-height:1.4;
+  color:var(--soft-text);
+  background:var(--soft-surface);
+  width:30%;
+  min-width:6.4em; /* 日本語6文字までは改行されない幅の目安 */
+}
+.name-score-table .mini-score{
+  color:var(--soft-text-dim);
+  font-weight:600;
+  font-size:12px;
+  min-width:5.5ch; /* 「30 － 29」が改行されない幅の目安 */
+  white-space:nowrap;
+}
+.name-score-table .game-count{
+  font-weight:800;
+  font-size:clamp(16px, 4.5vw, 20px);
+  color:var(--soft-primary-dark);
+  background:var(--soft-card);
+  width:10%;
+}
+
+/* ---------- 試合結果サマリー ---------- */
+
+/* ---------- ゲームごとの得点グリッド（公式様式） ---------- */
+.game-section{
+  display:flex;
+  border:1px solid var(--soft-border);
+  border-radius:8px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+.game-vlabel{
+  writing-mode:vertical-rl;
+  text-orientation:upright;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 4px;
+  font-size:clamp(11px, 3vw, 13px);
+  font-weight:700;
+  color:var(--soft-text);
+  background:var(--soft-card);
+  border-right:1px solid var(--soft-border);
+}
+.game-section.empty .game-vlabel{ color:var(--soft-text-dim); }
+.game-empty-note{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--soft-text-dim);
+  font-size:13px;
+  padding:10px;
+}
+.score-grid-wrap{
+  flex:1;
+  overflow-x:auto;
+}
+table.score-grid{
+  border-collapse:collapse;
+  width:100%;
+}
+table.score-grid td{
+  border:1px solid var(--soft-border);
+  text-align:center;
+  vertical-align:middle;
+  min-width:15px;
+  padding:2px 1px;
+  font-size:10px;
+  color:var(--soft-text-dim);
+}
+table.score-grid td.player-name{
+  writing-mode:horizontal-tb;
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:11px;
+  font-weight:700;
+  color:var(--soft-text);
+  background:var(--soft-card);
+  padding:2px 4px;
+  min-width:100px;
+  max-width:100px;
+}
+
+.sheet-player-name{display:block;line-height:1.2;}
+.sheet-player-club{display:block;line-height:1.15;font-weight:600;color:var(--soft-text-dim);white-space:nowrap;overflow:hidden;text-align:left;margin-top:1px;}
+.name-box .sheet-player-club{text-align:center;margin-top:2px;}
+table.score-grid td.sr-mark{
+  font-weight:800;
+  min-width:11px;
+  padding:2px 0;
+  background:var(--soft-card);
+  color:var(--soft-primary-dark);
+}
+table.score-grid td.filled{
+  background:var(--soft-primary);
+  color:#fff;
+  font-weight:800;
+}
+table.score-grid td.filled.team-b{
+  background:var(--soft-secondary-dark);
+}
+
+.sign-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1vh 3vw;
+  margin:2vh 0;
+  font-size:min(2.4vw,1.8vh);
+  color:var(--soft-text-dim);
+}
+
+.sheet-btns{
+  display:flex;
+  gap:2vw;
+}
+.sheet-btns button{
+  flex:1;
+  padding:1.6vh 0;
+  border:none;
+  border-radius:14px;
+  font-size:min(3vw,2.2vh);
+  font-weight:700;
+}
+.sheet-btns .print-btn{ background:var(--soft-surface); color:var(--soft-text); border:1px solid var(--soft-border); }
+.sheet-btns .new-btn{ background:linear-gradient(135deg, var(--soft-primary), var(--soft-primary-dark)); color:#fff; }
+
+/* スマホ横画面：試合終了スコアシートの操作ボタンを押しやすくする */
+@media (orientation:landscape) and (max-height:600px){
+  .sheet-btns{
+    gap:12px;
+    margin-top:10px;
+  }
+  .sheet-btns button{
+    min-height:60px;
+    padding:12px 10px;
+    border-radius:16px;
+    font-size:clamp(18px,2.4vw,22px);
+    line-height:1.15;
+    font-weight:800;
+    touch-action:manipulation;
+  }
+}
+
+@page{
+  size: A4 landscape;
+  margin: 10mm;
+}
+@media print{
+  body *{ visibility:hidden; }
+  #sheetOverlay, #sheetOverlay *{ visibility:visible; }
+  #sheetOverlay{ position:absolute; inset:0; background:#fff; color:#000; }
+  .sheet{ background:#fff; color:#000; border:none; max-width:100%; }
+  .sheet-result{ background:#f0f0f0; }
+  .sheet-result .name.win{ color:#b8860b; }
+  .sheet-btns{ display:none; }
+  .info-line{ color:#000; border-bottom-color:#999; }
+  .info-line .lbl{ color:#555; }
+  .name-score-table td{ border-color:#333; }
+  .name-score-table .name-box, .name-score-table .lr-tab{ background:#fff; color:#000; }
+  .name-score-table .game-count{ background:#fff; color:#000; }
+  .game-section{ border-color:#333; }
+  .game-vlabel{ background:#fff; color:#000; border-right-color:#333; }
+  .score-grid-wrap{ overflow:visible; }
+  table.score-grid{ width:100%; table-layout:fixed; }
+  table.score-grid td{ border-color:#333; color:#000; }
+  table.score-grid td:not(.player-name):not(.sr-mark){ min-width:0; width:auto; }
+  table.score-grid td.player-name{ width:100px; min-width:100px; max-width:100px; background:#fff; }
+  table.score-grid td.sr-mark{ width:11px; min-width:11px; background:#fff; }
+  table.score-grid td.filled{ background:#ddd !important; color:#000; font-weight:800; }
+  .sign-row{ color:#000; }
+}
+
+.confirm-overlay{
+  position:fixed; inset:0;
+  background:rgba(92,74,58,0.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:60;
+}
+.confirm-overlay.active{ display:flex; }
+.confirm-box{
+  background:var(--soft-bg);
+  border:1px solid var(--soft-border);
+  border-radius:20px;
+  padding:3.5vh 4vw;
+  max-width:92vw;
+  text-align:center;
+  color:var(--soft-text);
+  box-shadow:0 12px 30px rgba(92,74,58,0.25);
+}
+.confirm-box p{ font-size:min(4.6vw,3.6vh); font-weight:600; line-height:1.5; margin:0 0 2.6vh; }
+.confirm-box .row{ display:flex; gap:2vw; }
+.confirm-box button{
+  flex:1;
+  padding:2vh 0;
+  border:none;
+  border-radius:14px;
+  font-size:min(4vw,3.2vh);
+  font-weight:800;
+}
+.confirm-box .cancel{ background:var(--soft-surface); color:var(--soft-text); border:1px solid var(--soft-border); }
+.confirm-box .ok{ background:linear-gradient(135deg, var(--soft-danger), var(--soft-danger-dark)); color:#fff; }
+
+
+/* ゲーム終了確認：横画面では選手名・次ゲームボタンを改行させず大きく表示 */
+#nextGameOverlay .confirm-box{width:min(96vw,900px);box-sizing:border-box;padding:3.2vh 3vw;}
+#nextGameOverlay #nextGameMsg{font-size:min(4.2vw,4.2vh);line-height:1.35;margin-bottom:2.4vh;}
+#nextGameOverlay .next-game-scoreline{display:block;white-space:nowrap;font-size:1.12em;font-weight:800;margin:.45em 0 .2em;}
+#nextGameOverlay .next-game-count{display:block;white-space:nowrap;font-size:.9em;}
+#nextGameOverlay .row{gap:1.5vw;}
+#nextGameOverlay button{white-space:nowrap;padding:2vh 2.2vw;font-size:min(3.4vw,3.2vh);}
+@media (orientation:landscape){
+  #nextGameOverlay .confirm-box{width:min(94vw,980px);padding:3vh 3vw;}
+  #nextGameOverlay #nextGameMsg{font-size:clamp(22px,3.5vh,34px);}
+  #nextGameOverlay button{font-size:clamp(20px,3.1vh,30px);min-width:0;}
+}
+
+/* 棄権選択：長い選手名でもボタン内に十分な左右余白を確保 */
+#retireOverlay .confirm-box{
+  width:min(96vw, 760px);
+  max-width:96vw;
+  padding:3.5vh clamp(22px, 5vw, 44px);
+  box-sizing:border-box;
+}
+#retireOverlay .row{ width:100%; }
+#retireOverlay button{
+  width:100% !important;
+  box-sizing:border-box;
+  padding:2vh clamp(24px, 6vw, 52px);
+  font-size:clamp(20px, 3.6vw, 32px);
+  line-height:1.35;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+/* 大会Nowから受信した所属チーム：選手名を主役にし、所属は控えめな補助情報として表示 */
+.player-club{font-size:clamp(11px,2.2vw,15px);color:var(--soft-text-dim);font-weight:600;line-height:1.25;margin:-.15vh .35vw .75vh;min-height:1.25em;letter-spacing:.01em;}
+.player-club:empty{display:none;}
+
+/* ===== PWA内 QR読み取り ===== */
+.qr-link-btn{width:100%;margin-top:1vh;padding:1.05vh 1vw;border:1px solid #555;border-radius:12px;background:#202020;color:#fff;font-size:clamp(16px,2.1vw,22px);font-weight:800;cursor:pointer}
+.qr-scan-overlay{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.qr-scan-overlay.show{display:flex}.qr-scan-panel{width:min(680px,96vw);background:#111;border:1px solid #444;border-radius:18px;padding:14px;box-sizing:border-box;color:#fff}
+.qr-scan-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.qr-scan-head strong{font-size:20px}.qr-scan-close{border:0;border-radius:10px;padding:9px 16px;background:#333;color:#fff;font-weight:800;font-size:16px}
+.qr-video-wrap{position:relative;width:100%;aspect-ratio:4/3;background:#000;border-radius:14px;overflow:hidden}.qr-video-wrap video{width:100%;height:100%;object-fit:cover}.qr-guide{position:absolute;inset:18%;border:4px solid #fff;border-radius:18px;box-shadow:0 0 0 9999px rgba(0,0,0,.18);pointer-events:none}
+.qr-scan-msg{min-height:1.5em;margin-top:10px;text-align:center;font-size:15px;line-height:1.45;color:#ddd}
+
+/* 共有インターバル */
+#intervalOverlay{position:fixed;inset:0;z-index:85;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.18);pointer-events:auto;}
+#intervalOverlay.active{display:flex;}
+#intervalOverlay .interval-box{width:min(86vw,520px);background:rgba(20,20,20,.94);color:#fff;border-radius:24px;padding:24px 26px;text-align:center;box-shadow:0 16px 50px rgba(0,0,0,.38);}
+#intervalTitle{font-size:clamp(18px,3vw,28px);font-weight:800;margin-bottom:8px;}
+#intervalCountdown{font-size:clamp(72px,16vw,150px);font-weight:900;line-height:1;font-variant-numeric:tabular-nums;margin:8px 0 18px;transition:font-size .18s ease,transform .18s ease;}
+#intervalCountdown.last20{font-size:clamp(96px,22vw,210px);transform:scale(1.06);color:#ff8a00;text-shadow:0 0 18px rgba(255,138,0,.22);}
+#intervalStartBtn,#intervalUndoBtn{min-height:54px;border:0;border-radius:14px;font-size:clamp(18px,3vw,26px);font-weight:800;padding:10px 24px;}
+#intervalStartBtn{background:#fff;color:#111;min-width:180px;}
+#intervalStartBtn:disabled{opacity:.45;}
+#intervalUndoBtn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);margin-right:10px;}
+</style>
+
+</head>
+<body>
+<div id="app">
+
+  <!-- 設定画面（縦画面のまま表示） -->
+  <div id="settings">
+    <div class="court-badge court-badge-settings" id="courtBadgeSettings" style="display:none;"></div>
+    <div class="settings-title-row">
+      <h1 class="settings-title"><span class="shuttle">🏸</span>バドる - 試合設定</h1>
+      <button type="button" id="helpBtn" class="help-btn">?</button>
+    </div>
+    <div class="dispatch-wait" id="dispatchWait"><div class="main">配信待ち</div><div class="sub">大会運営から次の試合が配信されるまでお待ちください</div></div>
+
+    <div class="field field-type">
+      <label>種目</label>
+      <div class="seg" id="segType">
+        <button data-v="singles">シングルス</button>
+        <button data-v="doubles" class="on">ダブルス</button>
+      </div>
+    </div>
+
+    <div class="field field-format">
+      <label>試合形式</label>
+      <div class="seg" id="segFormat">
+        <button data-v="single">1ゲームマッチ</button>
+        <button data-v="best3" class="on">3ゲームマッチ</button>
+      </div>
+      <div class="hint">3ゲームマッチは2ゲーム先取で勝利。各ゲーム後にエンドを交代し、最終（3）ゲームは先に目標点の半分に達した側でエンドを交代します。</div>
+    </div>
+
+    <div class="field field-points">
+      <label>ゲームポイント</label>
+      <div class="seg" id="segPoints">
+        <button data-v="21">21点</button>
+        <button data-v="15" class="on">15点</button>
+        <button data-v="custom">入力</button>
+      </div>
+      <div class="custom-points-row" id="customPointsRow">
+        <input type="number" id="customPoints" placeholder="目標点数を入力" min="3" max="99">
+      </div>
+    </div>
+
+    <div class="field field-deuce">
+      <label>セッティング（デュース）</label>
+      <div class="seg" id="segDeuce">
+        <button data-v="on" class="on">あり</button>
+        <button data-v="off">なし</button>
+      </div>
+      <div class="deuce-max-row show" id="deuceMaxRow">
+        <label style="margin-top:0.8vh;">セッティング時の最大点</label>
+        <input type="number" id="deuceMax" min="3" max="99">
+        <div class="hint">例）15点なら21点、21点なら30点が一般的です</div>
+      </div>
+    </div>
+
+    <div class="field field-names">
+      <label>選手名</label>
+      <div class="two-col-swap">
+        <div class="team-block">
+          <div class="team-label">LEFT</div>
+          <input type="text" id="nameA1" placeholder="選手1" value="選手A1">
+          <div class="player-club" id="clubA1"></div>
+          <input type="text" id="nameA2" placeholder="選手2（ダブルス）" value="選手A2">
+          <div class="player-club" id="clubA2"></div>
+        </div>
+        <button type="button" id="swapSidesBtn" class="swap-btn" title="左右の選手名を入れ替え" aria-label="左右の選手名を入れ替え">⇄</button>
+        <div class="team-block">
+          <div class="team-label">RIGHT</div>
+          <input type="text" id="nameB1" placeholder="選手1" value="選手B1">
+          <div class="player-club" id="clubB1"></div>
+          <input type="text" id="nameB2" placeholder="選手2（ダブルス）" value="選手B2">
+          <div class="player-club" id="clubB2"></div>
+        </div>
+      </div>
+      <div class="hint">LEFTが試合開始時に画面の左に表示されます。中央のボタンで入れ替えられます。</div>
+    </div>
+
+    <div class="field field-first-server">
+      <label>ファーストサーバー</label>
+      <select id="firstServer"></select>
+    </div>
+
+    <div class="field field-first-receiver">
+      <label>ファーストレシーバー</label>
+      <select id="firstReceiver"></select>
+    </div>
+
+    <div class="field field-tournament-info">
+      <label>大会情報（スコアシート用・任意入力）</label>
+      <div class="two-col">
+        <input type="text" id="tournamentName" placeholder="大会名">
+        <input type="text" id="matchNumber" placeholder="試合番号">
+      </div>
+      <div class="two-col" style="margin-top:1vh;">
+        <input type="text" id="venueName" placeholder="場所">
+        <input type="text" id="courtNumber" placeholder="コート番号">
+      </div>
+    </div>
+
+    <div class="field field-taika-link">
+      <label>大会Now連携</label>
+      <div class="team-block taika-link-inputs">
+        <div class="two-col">
+          <input type="text" id="taikaEventId" placeholder="大会ID">
+          <input type="number" id="taikaCourtNo" placeholder="コート番号" min="1">
+        </div>
+        <div class="seg" id="segTaikaLink" style="margin-top:1vh;">
+          <button type="button" data-v="off" class="on">連携しない</button>
+          <button type="button" data-v="on">連携する</button>
+        </div>
+        <button type="button" class="qr-link-btn" id="scanTaikaQrBtn">大会NowのQRを読み取る</button>
+      </div>
+      <div class="hint" id="taikaStatusHint">連携すると、大会Nowから配信された次の試合が自動的に反映されます。</div>
+    </div>
+
+    <div class="err" id="settingsErr"></div>
+    <button class="start-btn" id="startBtn">試合開始</button>
+
+    <div class="past-matches" id="pastMatchesWrap" style="display:none;">
+      <h3>過去の試合</h3>
+      <div id="pastMatchesList"></div>
+    </div>
+  </div>
+
+  <div class="qr-scan-overlay" id="qrScanOverlay" aria-hidden="true">
+    <div class="qr-scan-panel">
+      <div class="qr-scan-head"><strong>大会Now QR読み取り</strong><button type="button" class="qr-scan-close" id="qrScanClose">閉じる</button></div>
+      <div class="qr-video-wrap"><video id="qrScanVideo" playsinline muted></video><div class="qr-guide"></div></div>
+      <div class="qr-scan-msg" id="qrScanMsg">コートカードに表示したQRコードを枠内に入れてください</div>
+    </div>
+  </div>
+
+  <!-- スコアボード画面（横画面固定） -->
+  <div class="rotor">
+  <div id="board">
+    <div class="court-badge court-badge-board" id="courtBadgeBoard" style="display:none;"></div>
+    <div class="game-target-badge" id="gameBadge"></div>
+    <div class="set-status" id="setStatus"></div>
+    <div class="board-main">
+      <div class="side" id="sideLeft">
+        <div class="score-zone"><div class="score-num" id="scoreLeftNum"></div></div>
+        <div class="court-slots" id="slotsLeft"></div>
+      </div>
+      <div class="mid-divider"></div>
+      <div class="side" id="sideRight">
+        <div class="score-zone"><div class="score-num" id="scoreRightNum"></div></div>
+        <div class="court-slots" id="slotsRight"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="undo-btn" id="undoBtn">Undo</button>
+      <button class="stop-btn" id="retireBtn">棄権</button>
+      <button class="stop-btn" id="stopBtn">開始取消</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- コート変更モーダル -->
+<div class="confirm-overlay" id="courtSelectOverlay">
+  <div class="confirm-box">
+    <p>使用するコートを選択</p>
+    <div id="courtSelectButtons"></div>
+    <div class="row" style="margin-top:14px;"><button class="cancel" id="courtSelectCancel" style="width:100%;">キャンセル</button></div>
+  </div>
+</div>
+
+<!-- 棄権：どちら側が棄権するか選択するモーダル -->
+<div class="confirm-overlay" id="retireOverlay">
+  <div class="confirm-box">
+    <p>どちらが棄権しますか？</p>
+    <div class="row" style="flex-direction:column; gap:1.2vh;">
+      <button class="ok" id="retireA" style="width:100%;"></button>
+      <button class="ok" id="retireB" style="width:100%;"></button>
+      <button class="cancel" id="retireCancel" style="width:100%;">キャンセル</button>
+    </div>
+  </div>
+</div>
+
+<!-- 使い方モーダル -->
+<div class="help-modal-bg" id="helpModalBg">
+  <div class="help-modal-box">
+    <h2>バドる の使い方</h2>
+    <div class="help-modal-scroll" id="helpModalScroll"></div>
+    <button class="help-modal-close" id="helpModalClose">閉じる</button>
+  </div>
+</div>
+
+<!-- 共有インターバル -->
+<div id="intervalOverlay" aria-live="polite">
+  <div class="interval-box">
+    <div id="intervalTitle">インターバル</div>
+    <div id="intervalCountdown">60</div>
+    <div><button id="intervalUndoBtn" type="button" style="display:none;">Undo</button><button id="intervalStartBtn" type="button">再開</button></div>
+  </div>
+</div>
+
+<!-- 次のゲームへ進むモーダル -->
+<div class="confirm-overlay" id="nextGameOverlay">
+  <div class="confirm-box">
+    <p id="nextGameMsg"></p>
+    <div class="row">
+      <button class="cancel" id="nextGameUndoBtn">Undo</button>
+      <button class="ok" id="nextGameBtn" style="background:linear-gradient(135deg, var(--soft-primary), var(--soft-primary-dark)); color:#fff;">次のゲームへ</button>
+    </div>
+  </div>
+</div>
+
+<!-- 簡易通知トースト -->
+<div id="toast" style="position:fixed; left:50%; bottom:12vh; transform:translateX(-50%) translateY(20px); background:var(--soft-surface); color:var(--soft-text); border:1px solid var(--soft-border); padding:1.4vh 3vw; border-radius:14px; font-size:min(2.8vw,2.2vh); opacity:0; pointer-events:none; transition:opacity .25s, transform .25s; z-index:70; white-space:nowrap; box-shadow:0 8px 20px rgba(92,74,58,0.25);"></div>
+
+<!-- スコアシート -->
+<div id="sheetOverlay">
+  <div class="sheet" id="sheetContent"></div>
+</div>
+
+<!-- 確認ダイアログ -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <p id="confirmMsg">試合の開始を取り消しますか？</p>
+    <div class="row">
+      <button class="cancel" id="confirmCancel">キャンセル</button>
+      <button class="ok" id="confirmOk">実行する</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+/* ============================================================
+   Firebase 設定
+   life--log プロジェクトなど既存のFirebaseプロジェクトのconfigを
+   ここに設定してください。データは badoru/ 以下に保存されます。
+============================================================ */
+const firebaseConfig = {
+  apiKey: "AIzaSyBf5AlMcg8CCmLlhWzpEvk6-rpfzkZj6Xs",
+  authDomain: "event-now2.firebaseapp.com",
+  databaseURL: "https://event-now2-default-rtdb.firebaseio.com",
+  projectId: "event-now2",
+  storageBucket: "event-now2.firebasestorage.app",
+  messagingSenderId: "716003781272",
+  appId: "1:716003781272:web:4a97be8c446d843ca07eed"
+};
+
+let dbReady = false;
+let db = null;
+let matchRef = null;
+let matchesRef = null;
+try{
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.database();
+  matchRef = db.ref('badoru/currentMatch');
+  matchesRef = db.ref('badoru/matches');
+  dbReady = true;
+}catch(e){
+  console.warn('Firebase未設定のためローカルのみで動作します', e);
+}
+
+/* ============================================================
+   大会Now連携
+============================================================ */
+const TAIKA_LINK_KEY = 'badoru_taikanow_link';
+function loadTaikaLink(){
+  try{ return JSON.parse(localStorage.getItem(TAIKA_LINK_KEY) || 'null'); }catch(e){ return null; }
+}
+function saveTaikaLink(link){
+  try{ localStorage.setItem(TAIKA_LINK_KEY, JSON.stringify(link)); }catch(e){}
+}
+// 保存済みの大会Now連携は、ホーム画面から起動したPWA（standalone）のときだけ自動復元する。
+// Safariで通常URLを直接開いた場合は、保存値があっても未連携状態から開始する。
+function isStandaloneApp(){
+  try{
+    return !!((window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true);
+  }catch(e){ return false; }
+}
+const badoruStandalone = isStandaloneApp();
+let taikaLink = badoruStandalone ? loadTaikaLink() : null; // {eventId, courtNo, enabled}
+// URLパラメータ（大会Nowが発行する連携リンク）が付いている場合は、起動形態にかかわらず最優先して自動連携する
+// 例: index.html?taikaEvent=xxxxx&court=3
+let taikaFullscreenRequested = false;
+function enterTaikaFullscreen(){
+  if(!taikaFullscreenRequested) return;
+  if(document.fullscreenElement || document.webkitFullscreenElement) return;
+  const root=document.documentElement;
+  const fn=root.requestFullscreen || root.webkitRequestFullscreen;
+  if(!fn) return;
+  try{
+    const r=fn.call(root);
+    if(r && r.catch) r.catch(()=>{});
+  }catch(e){}
+}
+try{
+  const urlParams = new URLSearchParams(location.search);
+  // ブラウザ仕様上、URLを開いただけでは全画面化できないため、fullscreen=1 は
+  // 「次のユーザー操作（特に試合開始）で全画面化する」指定として扱う。
+  taikaFullscreenRequested = urlParams.get('fullscreen') === '1';
+  const urlEventId = urlParams.get('taikaEvent');
+  const urlCourtNo = urlParams.get('court');
+  if(urlEventId && urlCourtNo){
+    taikaLink = { eventId: urlEventId, courtNo: urlCourtNo, enabled: true };
+    saveTaikaLink(taikaLink);
+  }
+}catch(e){}
+let taikaCourtListenerRef = null;
+let taikaRulesListenerRef = null;
+let taikaEventListenerRef = null; // 簡易自動配信用（大会全体を監視）
+let taikaEventDataCache = null; // 大会全体データ（所属チーム補完・大会情報同期用）
+let taikaCourtData = null; // 直近取得したコート状態のキャッシュ
+let matchRefListenerTarget = null; // subscribeMatchRef()より前に宣言（TDZ回避）
+
+function taikaCourtRef(){
+  if(!dbReady || !db || !taikaLink || !taikaLink.enabled || !taikaLink.eventId || !taikaLink.courtNo) return null;
+  return db.ref('taikainow/' + taikaLink.eventId + '/courts/' + taikaLink.courtNo);
+}
+
+function taikaEventRulesRef(){
+  if(!dbReady || !db || !taikaLink || !taikaLink.enabled || !taikaLink.eventId) return null;
+  return db.ref('taikainow/' + taikaLink.eventId + '/matchRules');
+}
+
+function applyTaikaLinkToMatchRef(){
+  // 連携時は「badoru/currentMatch」の代わりにコート専用パスを使い、
+  // 複数コートが同時進行してもスコアが混線しないようにする
+  if(!dbReady || !db) return;
+  if(taikaLink && taikaLink.enabled && taikaLink.eventId && taikaLink.courtNo){
+    matchRef = db.ref('badoru/events/' + taikaLink.eventId + '/courts/' + taikaLink.courtNo + '/currentMatch');
+  }else{
+    matchRef = db.ref('badoru/currentMatch');
+  }
+  if(typeof subscribeMatchRef === 'function') subscribeMatchRef();
+}
+// 初回のmatchRef確定は、DEVICE_ID等の宣言が済んだ後（設定画面初期化時のreapplyTaikaLink）で行う。
+// ここで即時呼び出すと、まだ宣言されていないconst/letにsubscribeMatchRef経由でアクセスしてしまうため呼ばない。
+
+
+/* ============================================================
+   状態管理
+============================================================ */
+const DEVICE_ID = (()=>{
+  // 同じタブの再読み込みで別端末扱いにならないよう、タブ単位でIDを維持する。
+  try{
+    let id=sessionStorage.getItem('badoru_device_id');
+    if(!id){ id='dev_'+Math.random().toString(36).slice(2,10)+'_'+Date.now().toString(36); sessionStorage.setItem('badoru_device_id',id); }
+    return id;
+  }catch(e){ return 'dev_'+Math.random().toString(36).slice(2,10)+'_'+Date.now().toString(36); }
+})();
+
+// 同一イベント・同一コートの操作権管理（1コート=1操作端末）
+const COURT_LOCK_STALE_MS = 30000;
+let courtLockRef = null;
+let courtLockHeartbeat = null;
+let courtLockOwned = false;
+let courtLockOwner = null;
+// 観戦中断後は、同じ進行中試合の更新を受信しても得点盤へ自動復帰しない。
+let spectatorViewingPaused = false;
+
+function ensureCourtLockOverlay(){
+  let ov = document.getElementById('courtLockOverlay');
+  if(ov) return ov;
+  ov = document.createElement('div');
+  ov.id = 'courtLockOverlay';
+  ov.style.cssText = 'display:none;position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.86);color:#fff;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:system-ui,-apple-system,sans-serif';
+  ov.innerHTML = '<div style="max-width:560px;background:#171717;border:1px solid #444;border-radius:20px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.5)"><div style="font-size:24px;font-weight:800;margin-bottom:12px">このコートは別の端末で使用中です</div><div id="courtLockMsg" style="font-size:15px;line-height:1.7;color:#ccc;margin-bottom:20px">この端末は閲覧専用です。</div><button id="courtLockTakeover" style="border:0;border-radius:999px;padding:13px 22px;font-size:16px;font-weight:800;background:#ffcc00;color:#111;cursor:pointer">この端末に操作権を移す</button></div>';
+  document.body.appendChild(ov);
+  document.getElementById('courtLockTakeover').addEventListener('click', takeOverCourtLock);
+  return ov;
+}
+function ensureSpectatorBadge(){
+  let badge = document.getElementById('spectatorBadge');
+  if(badge) return badge;
+  badge = document.createElement('div');
+  badge.id = 'spectatorBadge';
+  badge.style.cssText = 'display:none;position:fixed;left:14px;top:14px;z-index:99999;background:rgba(25,25,25,.88);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 12px;font:700 13px/1 system-ui,-apple-system,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.28);backdrop-filter:blur(6px);align-items:center;gap:9px;pointer-events:auto';
+  badge.innerHTML = '<span>観戦モード</span><button id="spectatorTakeover" style="border:0;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;background:#ffcc00;color:#111;cursor:pointer">操作権を移す</button><button id="spectatorStop" style="border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;background:transparent;color:#fff;cursor:pointer">観戦中断</button>';
+  document.body.appendChild(badge);
+  document.getElementById('spectatorTakeover').addEventListener('click', takeOverCourtLock);
+  document.getElementById('spectatorStop').addEventListener('click', stopSpectatorViewing);
+  return badge;
+}
+function stopSpectatorViewing(){
+  // 大会・コート連携自体は維持したまま、現在の試合の観戦だけを中断する。
+  // 観戦用に復元したstate/matchを残すと openCourtSelector() が「試合中」と判定して
+  // コート選択を拒否するため、端末内の表示状態だけ破棄する（Firebaseには書き込まない）。
+  spectatorViewingPaused = true;
+  const badge=document.getElementById('spectatorBadge');
+  if(badge) badge.style.display='none';
+  state = null; match = null; historyStack = [];
+  clearActiveMatchLocal();
+  showSettings();
+  updateCourtBadge();
+  if(taikaCourtData) renderTaikaStatusHint(taikaCourtData);
+}
+function setCourtReadOnly(readOnly, owner){
+  courtLockOwned = !readOnly;
+  courtLockOwner = owner || null;
+  // 2台目は画面を覆わず、自動的にリアルタイム観戦モードにする。
+  const ov = ensureCourtLockOverlay();
+  ov.style.display = 'none';
+  const badge = ensureSpectatorBadge();
+  badge.style.display = (readOnly && !spectatorViewingPaused) ? 'flex' : 'none';
+  const startBtn = document.getElementById('startBtn');
+  if(startBtn && taikaLink && taikaLink.enabled){
+    // 操作権だけでなく、実際に『配信済み・開始待ち』の試合がある時だけ開始可能。
+    // 配信待ち／進行中では、ロック状態が変わってもグレーアウトを維持する。
+    const canStart = !!(!readOnly && taikaCourtData && taikaCourtData.status === 'assigned' && taikaCourtData.match);
+    startBtn.disabled = !canStart;
+  }
+}
+function courtLockPathRef(){
+  if(!dbReady || !db || !taikaLink || !taikaLink.enabled || !taikaLink.eventId || !taikaLink.courtNo) return null;
+  return db.ref('taikainow/' + taikaLink.eventId + '/courtLocks/' + taikaLink.courtNo);
+}
+function stopCourtLock(){
+  if(courtLockHeartbeat){ clearInterval(courtLockHeartbeat); courtLockHeartbeat=null; }
+  if(courtLockRef){ try{ courtLockRef.off('value'); }catch(e){} }
+  courtLockRef=null; courtLockOwned=false; courtLockOwner=null;
+  const ov=document.getElementById('courtLockOverlay'); if(ov) ov.style.display='none';
+  const badge=document.getElementById('spectatorBadge'); if(badge) badge.style.display='none';
+}
+function startCourtLock(){
+  stopCourtLock();
+  const ref = courtLockPathRef();
+  if(!ref) return;
+  courtLockRef = ref;
+  const now = Date.now();
+  ref.transaction(cur=>{
+    if(!cur || cur.deviceId===DEVICE_ID || !cur.heartbeatAt || now-cur.heartbeatAt>COURT_LOCK_STALE_MS){
+      return {deviceId:DEVICE_ID, acquiredAt:(cur&&cur.deviceId===DEVICE_ID&&cur.acquiredAt)||now, heartbeatAt:now};
+    }
+    return;
+  }, (err, committed, snap)=>{
+    if(err) return;
+    const val=snap&&snap.val();
+    setCourtReadOnly(!(committed && val && val.deviceId===DEVICE_ID), val);
+    if(committed && val && val.deviceId===DEVICE_ID){
+      try{ ref.onDisconnect().remove(); }catch(e){}
+    }
+  });
+  ref.on('value', snap=>{
+    const val=snap.val();
+    const stale = val && val.heartbeatAt && Date.now()-val.heartbeatAt>COURT_LOCK_STALE_MS;
+    if(!val || stale){
+      if(!courtLockOwned) startCourtLock();
+      return;
+    }
+    setCourtReadOnly(val.deviceId!==DEVICE_ID, val);
+  });
+  courtLockHeartbeat=setInterval(()=>{
+    if(courtLockOwned && courtLockRef){ courtLockRef.update({heartbeatAt:Date.now()}).catch(()=>{}); }
+  },10000);
+}
+function applyTakenOverLiveSnapshot(val){
+  if(!val || !val.settings || !val.state || !val.match || val.match.status !== 'ongoing') return Promise.resolve(false);
+  settings=val.settings;
+  state=val.state;
+  match=val.match;
+  historyStack=[];
+  saveActiveMatchLocal();
+  showBoard();
+  render();
+  suppressRemote=true;
+  // 操作権移行後はコート専用currentMatchも新端末所有として即時更新する。
+  return matchRef.set({deviceId:DEVICE_ID, ownerAcquiredAt:(courtLockOwner&&courtLockOwner.deviceId===DEVICE_ID)?courtLockOwner.acquiredAt:null, updatedAt:Date.now(), settings, state, match}).then(()=>{
+    clearTimeout(remoteApplyTimer);
+    remoteApplyTimer=setTimeout(()=>{ suppressRemote=false; },800);
+    return true;
+  });
+}
+function restoreLiveMatchAfterTakeover(){
+  // currentMatch と大会Now側 live.snapshot の2系統から復元する。
+  // Firebaseの反映順による一時的な空読みを考慮し、短時間だけ再試行して待ちっぱなしを防ぐ。
+  if(!(taikaLink && taikaLink.enabled) || !taikaCourtData || taikaCourtData.status !== 'live' || !taikaCourtData.match) return Promise.resolve(false);
+  if(!dbReady || !matchRef) return Promise.resolve(false);
+  let attempt=0;
+  function tryRestore(){
+    attempt++;
+    return Promise.all([
+      matchRef.once('value').then(s=>s.val()).catch(()=>null),
+      taikaCourtRef().child('live/snapshot').once('value').then(s=>s.val()).catch(()=>null)
+    ]).then(vals=>{
+      // 大会Nowのlive.snapshotを優先。currentMatchは端末切替時に一時的に古いことがある。
+      const val=(vals[1] && vals[1].settings && vals[1].state && vals[1].match) ? vals[1] : vals[0];
+      if(val && val.settings && val.state && val.match && val.match.status==='ongoing') return applyTakenOverLiveSnapshot(val);
+      if(attempt<8) return new Promise(resolve=>setTimeout(resolve,250)).then(tryRestore);
+      return false;
+    });
+  }
+  return tryRestore().catch(e=>{
+    console.warn('操作権移行時の進行中試合復元に失敗しました',e);
+    return false;
+  });
+}
+function takeOverCourtLock(){
+  spectatorViewingPaused = false;
+  const ref=courtLockPathRef(); if(!ref) return;
+  const now=Date.now();
+  ref.set({deviceId:DEVICE_ID, acquiredAt:now, heartbeatAt:now}).then(()=>{
+    try{ ref.onDisconnect().remove(); }catch(e){}
+    setCourtReadOnly(false, {deviceId:DEVICE_ID, acquiredAt:now, heartbeatAt:now});
+    courtLockOwned=true;
+    courtLockOwner={deviceId:DEVICE_ID, acquiredAt:now, heartbeatAt:now};
+    return restoreLiveMatchAfterTakeover();
+  }).then(restored=>{
+    if(!restored && taikaCourtData && taikaCourtData.status==='live'){
+      settingsErr.textContent='操作権は取得しましたが、進行中スコアを復元できませんでした。元端末が通信可能か確認し、もう一度「操作権を移す」を押してください。';
+    }else if(restored){
+      settingsErr.textContent='';
+    }
+  }).catch(()=>{});
+}
+function hasCourtOperationRight(){
+  if(!(taikaLink && taikaLink.enabled)) return true;
+  // ロックvalueイベントと画面操作のタイミングが前後しても、
+  // 現在のロック所有者が自端末なら操作を止めない。
+  return !!(courtLockOwned || (courtLockOwner && courtLockOwner.deviceId===DEVICE_ID));
+}
+function ensureCourtOperationRight(){
+  if(hasCourtOperationRight()) return true;
+  // 観戦端末からの誤操作は防ぐ一方、操作権取得直後の一時的な
+  // courtLockOwned反映遅延で主要ボタンが無反応になることを避ける。
+  const badge=document.getElementById('spectatorBadge');
+  if(badge && badge.style.display==='none' && courtLockOwner && courtLockOwner.deviceId===DEVICE_ID){
+    courtLockOwned=true;
+    return true;
+  }
+  return false;
+}
+
+
+let settings = null;
+let match = null;      // 複数ゲームの進行管理
+let state = null;      // 進行中のゲーム状態
+let historyStack = [];
+let suppressRemote = false;
+let remoteApplyTimer = null;
+
+// ブラウザ再読み込み・誤終了から進行中の試合を復元するためのローカル保存
+const ACTIVE_MATCH_STORAGE_KEY = 'badoru_active_match_v1';
+function saveActiveMatchLocal(){
+  try{
+    if(settings && match && state && match.status === 'ongoing'){
+      localStorage.setItem(ACTIVE_MATCH_STORAGE_KEY, JSON.stringify({
+        settings, match, state, historyStack, savedAt: Date.now(),
+        // ローカル復元データを大会・コートに必ず紐づける。
+        // 別taikaEventの試合へ切り替えた際に過去大会の得点を誤復元しないために使用する。
+        taikaEventId: (taikaLink && taikaLink.enabled) ? String(taikaLink.eventId || '') : '',
+        taikaCourtNo: (taikaLink && taikaLink.enabled) ? String(taikaLink.courtNo || '') : ''
+      }));
+    }else{
+      localStorage.removeItem(ACTIVE_MATCH_STORAGE_KEY);
+    }
+  }catch(e){ console.warn('進行中試合のローカル保存に失敗しました', e); }
+}
+function clearActiveMatchLocal(){
+  try{ localStorage.removeItem(ACTIVE_MATCH_STORAGE_KEY); }catch(e){}
+}
+function restoreActiveMatchLocal(){
+  try{
+    const raw = localStorage.getItem(ACTIVE_MATCH_STORAGE_KEY);
+    if(!raw) return false;
+    const saved = JSON.parse(raw);
+    if(!saved || !saved.settings || !saved.match || !saved.state || saved.match.status !== 'ongoing'){
+      clearActiveMatchLocal();
+      return false;
+    }
+    // 大会Now連携中は、保存時の大会ID・コート番号が現在の連携先と完全一致する場合だけ復元する。
+    // 旧バージョンが保存した紐づけ情報なしのデータも、安全側で破棄する。
+    if(taikaLink && taikaLink.enabled){
+      const currentEvent=String(taikaLink.eventId || '');
+      const currentCourt=String(taikaLink.courtNo || '');
+      const savedEvent=String(saved.taikaEventId || '');
+      const savedCourt=String(saved.taikaCourtNo || '');
+      if(!savedEvent || !savedCourt || savedEvent!==currentEvent || savedCourt!==currentCourt){
+        clearActiveMatchLocal();
+        return false;
+      }
+    }else if(saved.taikaEventId || saved.taikaCourtNo){
+      // 大会Now未連携で起動した場合も、過去の大会Now試合は復元しない。
+      clearActiveMatchLocal();
+      return false;
+    }
+    settings = saved.settings;
+    match = saved.match;
+    state = saved.state;
+    historyStack = Array.isArray(saved.historyStack) ? saved.historyStack : [];
+    showBoard();
+    render();
+    return true;
+  }catch(e){
+    console.warn('進行中試合の復元に失敗しました', e);
+    return false;
+  }
+}
+
+function otherTeam(t){ return t === 'A' ? 'B' : 'A'; }
+
+function partnerOf(team, playerName){
+  const arr = settings.players[team];
+  if(arr.length < 2) return null;
+  return arr[0] === playerName ? arr[1] : arr[0];
+}
+
+function teamOf(playerName){
+  if(settings.players.A.includes(playerName)) return 'A';
+  if(settings.players.B.includes(playerName)) return 'B';
+  return null;
+}
+
+/* ---------- 設定画面 ---------- */
+const segType = document.getElementById('segType');
+const segFormat = document.getElementById('segFormat');
+const segPoints = document.getElementById('segPoints');
+const segDeuce = document.getElementById('segDeuce');
+const customPointsRow = document.getElementById('customPointsRow');
+const customPoints = document.getElementById('customPoints');
+const deuceMaxRow = document.getElementById('deuceMaxRow');
+const deuceMax = document.getElementById('deuceMax');
+const nameA2 = document.getElementById('nameA2');
+const nameB2 = document.getElementById('nameB2');
+const firstServerSel = document.getElementById('firstServer');
+const firstReceiverSel = document.getElementById('firstReceiver');
+const settingsErr = document.getElementById('settingsErr');
+const taikaEventIdInp = document.getElementById('taikaEventId');
+const taikaCourtNoInp = document.getElementById('taikaCourtNo');
+const segTaikaLink = document.getElementById('segTaikaLink');
+const taikaStatusHint = document.getElementById('taikaStatusHint');
+
+let curType = 'doubles';
+var currentTeamClubs = { A:['',''], B:['',''] };
+let curFormat = 'best3';
+let curPoints = 15;
+let curDeuce = true;
+
+function setSeg(container, value, onchange){
+  [...container.children].forEach(btn=>{
+    btn.classList.toggle('on', btn.dataset.v === String(value));
+  });
+}
+
+function applyTypeVisibility(){
+  const doubles = curType === 'doubles';
+  nameA2.style.display = doubles ? 'block' : 'none';
+  nameB2.style.display = doubles ? 'block' : 'none';
+  if(typeof renderTeamClubs==='function') renderTeamClubs();
+}
+applyTypeVisibility();
+
+segType.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  curType = btn.dataset.v;
+  setSeg(segType, curType);
+  applyTypeVisibility();
+  refreshPlayerSelects();
+});
+
+segFormat.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  curFormat = btn.dataset.v;
+  setSeg(segFormat, curFormat);
+});
+
+segPoints.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  setSeg(segPoints, btn.dataset.v);
+  customPointsRow.classList.toggle('show', btn.dataset.v === 'custom');
+  if(btn.dataset.v === 'custom'){
+    curPoints = 'custom';
+  }else{
+    curPoints = parseInt(btn.dataset.v, 10);
+    deuceMax.value = curPoints === 15 ? 21 : 30;
+  }
+});
+
+segDeuce.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  curDeuce = btn.dataset.v === 'on';
+  setSeg(segDeuce, btn.dataset.v);
+  deuceMaxRow.classList.toggle('show', curDeuce);
+});
+
+deuceMax.value = 21;
+
+function currentPlayers(){
+  const a1 = document.getElementById('nameA1').value.trim() || '選手A1';
+  const a2 = document.getElementById('nameA2').value.trim() || '選手A2';
+  const b1 = document.getElementById('nameB1').value.trim() || '選手B1';
+  const b2 = document.getElementById('nameB2').value.trim() || '選手B2';
+  if(curType === 'singles'){
+    return { A:[a1], B:[b1] };
+  }
+  return { A:[a1,a2], B:[b1,b2] };
+}
+
+function refreshPlayerSelects(){
+  const players = currentPlayers();
+  const sideLabel = { A:'LEFT', B:'RIGHT' };
+  const all = [...players.A.map(n=>({n,t:'A'})), ...players.B.map(n=>({n,t:'B'}))];
+
+  const prevServerValue = firstServerSel.value;
+  firstServerSel.innerHTML = all.map(p=>`<option value="${p.n}">${p.n}（${sideLabel[p.t]}）</option>`).join('');
+  if(all.some(p=> p.n === prevServerValue)){
+    firstServerSel.value = prevServerValue; // LEFT/RIGHTが入れ替わっても選択中の選手自体は維持する
+  }
+
+  updateReceiverOptions();
+}
+
+function updateReceiverOptions(){
+  const players = currentPlayers();
+  const sideLabel = { A:'LEFT', B:'RIGHT' };
+  const serverName = firstServerSel.value;
+  const serverTeam = players.A.includes(serverName) ? 'A' : 'B';
+  const recvTeam = serverTeam === 'A' ? 'B' : 'A';
+  const opts = players[recvTeam];
+
+  const prevReceiverValue = firstReceiverSel.value;
+  firstReceiverSel.innerHTML = opts.map(n=>`<option value="${n}">${n}（${sideLabel[recvTeam]}）</option>`).join('');
+  if(opts.includes(prevReceiverValue)){
+    firstReceiverSel.value = prevReceiverValue; // 同様にLEFT/RIGHTの入れ替えでは選手自体を維持する
+  }
+}
+
+firstServerSel.addEventListener('change', updateReceiverOptions);
+['nameA1','nameA2','nameB1','nameB2'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', refreshPlayerSelects);
+});
+function renderTeamClubs(){
+  ['A','B'].forEach(side=>{
+    [0,1].forEach(i=>{
+      const el=document.getElementById('club'+side+(i+1));
+      if(el) el.textContent=(currentTeamClubs[side]&&currentTeamClubs[side][i]) ? '（'+currentTeamClubs[side][i]+'）' : '';
+    });
+  });
+  const doubles = curType === 'doubles';
+  const a2c=document.getElementById('clubA2'), b2c=document.getElementById('clubB2');
+  if(a2c) a2c.style.display=doubles && a2c.textContent ? 'block':'none';
+  if(b2c) b2c.style.display=doubles && b2c.textContent ? 'block':'none';
+}
+
+document.getElementById('swapSidesBtn').addEventListener('click', ()=>{
+  if(taikaLink && taikaLink.enabled && taikaCourtData && taikaCourtData.match){
+    taikaSidesSwapped = !taikaSidesSwapped;
+  }
+  const a1 = document.getElementById('nameA1');
+  const a2 = document.getElementById('nameA2');
+  const b1 = document.getElementById('nameB1');
+  const b2 = document.getElementById('nameB2');
+  [a1.value, b1.value] = [b1.value, a1.value];
+  [a2.value, b2.value] = [b2.value, a2.value];
+  [currentTeamClubs.A, currentTeamClubs.B] = [currentTeamClubs.B, currentTeamClubs.A];
+  renderTeamClubs();
+  refreshPlayerSelects();
+});
+
+/* ---------- 大会Now連携 ---------- */
+function setTaikaSeg(value){
+  [...segTaikaLink.children].forEach(btn=>{
+    btn.classList.toggle('on', btn.dataset.v === value);
+  });
+}
+function applyTaikaMatchToForm(match){
+  if(!match) return;
+  // 実際の配信を受けたときだけ選手入力欄とサーバー／レシーバー選択を復帰
+  const ph={nameA1:'選手1',nameA2:'選手2',nameB1:'選手1',nameB2:'選手2'};
+  Object.entries(ph).forEach(([id,v])=>{ const el=document.getElementById(id); if(el) el.placeholder=v; });
+  if(firstServerSel) firstServerSel.disabled=false;
+  if(firstReceiverSel) firstReceiverSel.disabled=false;
+  const remoteA = (match.teamA || []).slice();
+  const remoteB = (match.teamB || []).slice();
+  const leftNames = taikaSidesSwapped ? remoteB : remoteA;
+  const rightNames = taikaSidesSwapped ? remoteA : remoteB;
+  document.getElementById('nameA1').value = leftNames[0] || '選手A1';
+  document.getElementById('nameA2').value = leftNames[1] || '選手A2';
+  document.getElementById('nameB1').value = rightNames[0] || '選手B1';
+  document.getElementById('nameB2').value = rightNames[1] || '選手B2';
+  // 所属は配信試合に同梱された配列を優先。旧配信データでは大会全体のplayerClubsから補完する。
+  const clubMap = (taikaEventDataCache && taikaEventDataCache.playerClubs) || {};
+  const remoteAClubs = (match.teamAClubs || remoteA.map(n=>clubMap[n]||'') || ['','']).slice();
+  const remoteBClubs = (match.teamBClubs || remoteB.map(n=>clubMap[n]||'') || ['','']).slice();
+  currentTeamClubs = taikaSidesSwapped
+    ? { A: remoteBClubs, B: remoteAClubs }
+    : { A: remoteAClubs, B: remoteBClubs };
+  while(currentTeamClubs.A.length<2) currentTeamClubs.A.push('');
+  while(currentTeamClubs.B.length<2) currentTeamClubs.B.push('');
+  renderTeamClubs();
+  const doubles = match.matchType === 'doubles';
+  curType = doubles ? 'doubles' : 'singles';
+  setSeg(segType, curType);
+  applyTypeVisibility();
+  if(match.matchCode){
+    document.getElementById('matchNumber').value = match.matchCode;
+  }
+  refreshPlayerSelects();
+}
+let lastTaikaMatchId = null;
+// 大会Nowから同じ試合データが再同期されても、利用者が選んだLEFT/RIGHTを維持する。
+let taikaSidesSwapped = false;
+// 自端末の『開始取消』で live→assigned に戻している間は、
+// 大会Now監視を外部競合と誤判定せず、LEFT/RIGHTの選択状態を維持する。
+let taikaCancelStartInProgress = false;
+function clearTaikaMatchForm(){
+  // 配信待ちでは、直前の選手情報だけでなくプレースホルダーも表示しない
+  ['nameA1','nameA2','nameB1','nameB2'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){ el.value=''; el.placeholder=''; }
+  });
+  const mn=document.getElementById('matchNumber'); if(mn) mn.value='';
+  currentTeamClubs={A:['',''],B:['','']};
+  renderTeamClubs();
+  // 配信待ち中はサーバー／レシーバーにも仮の選手名を生成しない
+  if(firstServerSel){ firstServerSel.innerHTML='<option value=""></option>'; firstServerSel.disabled=true; }
+  if(firstReceiverSel){ firstReceiverSel.innerHTML='<option value=""></option>'; firstReceiverSel.disabled=true; }
+}
+function renderTaikaStatusHint(courtData){
+  const startBtn = document.getElementById('startBtn');
+  const waitEl = document.getElementById('dispatchWait');
+  // 大会Now連携中で、現在このコートに配信試合が無ければ常に「配信待ち」。
+  // courts/{courtNo} 自体がまだ作成されていない初期状態も待機扱いにする。
+  const waiting = !!(taikaLink && taikaLink.enabled && (!courtData || courtData.status === 'idle' || !courtData.match));
+  if(waitEl) waitEl.classList.toggle('show', waiting);
+  if(!taikaLink || !taikaLink.enabled){
+    taikaStatusHint.textContent = '連携すると、大会Nowから配信された次の試合が自動的に反映されます。';
+    return;
+  }
+  const courtLabel = taikaLink.courtNo ? `【コート${taikaLink.courtNo}】` : '';
+  if(!courtData){
+    taikaStatusHint.textContent = `${courtLabel}大会Now連携：次の試合待ちです。運営側から配信されるまでこのまま待機してください。`;
+    clearTaikaMatchForm();
+    if(startBtn) startBtn.disabled = true;
+    return;
+  }
+  if(courtData.status === 'idle' || !courtData.match){
+    taikaStatusHint.textContent = `${courtLabel}大会Now連携：次の試合待ちです。運営側から配信されるまでこのまま待機してください。`;
+    if(startBtn) startBtn.disabled = true;
+  }else if(courtData.status === 'assigned'){
+    taikaStatusHint.textContent = `${courtLabel}大会Now連携：試合が配信されました。内容を確認して「試合開始」を押してください。`;
+    if(startBtn) startBtn.disabled = !hasCourtOperationRight();
+  }else if(courtData.status === 'live'){
+    taikaStatusHint.textContent = `${courtLabel}大会Now連携：この試合は進行中として記録されています。`;
+    // 進行中の試合を設定画面から二重開始してスコアを初期化しない。
+    if(startBtn) startBtn.disabled = true;
+  }
+}
+function stopTaikaListener(){
+  if(taikaCourtListenerRef){
+    try{ taikaCourtListenerRef.off('value'); }catch(e){}
+    taikaCourtListenerRef = null;
+  }
+  if(taikaRulesListenerRef){
+    try{ taikaRulesListenerRef.off('value'); }catch(e){}
+    taikaRulesListenerRef = null;
+  }
+  if(taikaEventListenerRef){
+    try{ taikaEventListenerRef.off('value'); }catch(e){}
+    taikaEventListenerRef = null;
+  }
+}
+
+/* ══ 簡易自動配信（大会Now管理画面が開かれていなくても、コートが空いたら次の試合を入れるための最低限のロジック） ══
+   リーグ・ブラケットの解決は行わず、「同じ選手が同時に複数コートへ出ない」ことだけを守って
+   キューの先頭から空いたコートへ割り当てる。大会Now側のcomputeDispatch内のassignIdleCourtsと同じ考え方。 */
+function liteTimeToMinutes(t){
+  if(!t) return null;
+  const m = /^(\d{1,2}):(\d{2})$/.exec(String(t).trim());
+  if(!m) return null;
+  return parseInt(m[1],10)*60 + parseInt(m[2],10);
+}
+function liteAssignIdleCourts(data){
+  const courtCount = data.courtCount || 0;
+  const queue = (data.queue || []).slice();
+  const courts = Object.assign({}, data.courts || {});
+  let changed = false;
+  const playing = {};
+  Object.keys(courts).forEach(cno=>{
+    const c = courts[cno];
+    if(c && c.match && (c.status==='assigned' || c.status==='live')){
+      (c.match.teamA||[]).concat(c.match.teamB||[]).forEach(n=>{ if(n) playing[n]=true; });
+    }
+  });
+  // 大会Now本体のassignIdleCourtsと同じく、格納順ではなく「予測時刻の早い順」で候補を探す
+  function sortedView(){
+    return queue.slice().sort((a,b)=>{
+      const ma=liteTimeToMinutes(a.time), mb=liteTimeToMinutes(b.time);
+      if(ma===null && mb===null) return 0;
+      if(ma===null) return 1;
+      if(mb===null) return -1;
+      return ma-mb;
+    });
+  }
+  for(let i=1;i<=courtCount;i++){
+    const key = String(i);
+    const court = courts[key] || {status:'idle', match:null, live:null, lastResult:null};
+    if(court.status !== 'idle' || queue.length===0) continue;
+    const view = sortedView();
+    let picked = null;
+    for(let qi=0; qi<view.length; qi++){
+      const names = (view[qi].teamA||[]).concat(view[qi].teamB||[]);
+      const conflict = names.some(n=> n && playing[n]);
+      if(!conflict){ picked = view[qi]; break; }
+    }
+    if(!picked) continue;
+    const idx = queue.indexOf(picked);
+    if(idx === -1) continue;
+    queue.splice(idx,1);
+    courts[key] = Object.assign({}, court, {status:'assigned', match:picked, live:null, assignedAt: Date.now()});
+    changed = true;
+    (picked.teamA||[]).concat(picked.teamB||[]).forEach(n=>{ if(n) playing[n]=true; });
+  }
+  if(!changed) return data;
+  return Object.assign({}, data, {queue, courts});
+}
+function watchTaikaEventForLiteDispatch(){
+  if(!dbReady || !db || !taikaLink || !taikaLink.enabled || !taikaLink.eventId) return;
+  const ref = db.ref('taikainow/' + taikaLink.eventId);
+  taikaEventListenerRef = ref;
+  ref.on('value', snap=>{
+    const data = snap.val();
+    if(!data) return;
+    taikaEventDataCache = data;
+    // 既にコートの試合を読み込んだ後で大会全体データが届いた場合も、所属を補完して再描画する
+    if(taikaCourtData && taikaCourtData.match){ applyTaikaMatchToForm(taikaCourtData.match); }
+    // 大会名・会場をスコアシート用の欄にも自動反映する（連携中は常に同期）
+    if(data.eventName){
+      const tournamentNameInp = document.getElementById('tournamentName');
+      if(tournamentNameInp) tournamentNameInp.value = data.eventName;
+    }
+    if(data.venueName){
+      const venueNameInp = document.getElementById('venueName');
+      if(venueNameInp) venueNameInp.value = data.venueName;
+    }
+    // 試合の配信は大会Nowの「配信」ボタンだけで行う。バドる側からの自動割当は行わない。
+  });
+}
+let taikaIntervalSettings={intervalEnabled:true,midIntervalSec:60,gameIntervalSec:120};
+function applyTaikaIntervalSettings(rules){
+  if(!rules) return;
+  taikaIntervalSettings.intervalEnabled=rules.intervalEnabled!==false;
+  taikaIntervalSettings.midIntervalSec=Math.max(0,Number(rules.midIntervalSec ?? 60)||0);
+  taikaIntervalSettings.gameIntervalSec=Math.max(0,Number(rules.gameIntervalSec ?? 120)||0);
+  // ここでは「次に開始する試合」用の設定キャッシュだけを更新する。
+  // 開始済み試合の settings はスナップショットとして固定し、途中変更しない。
+}
+function applyTaikaLiveScoringRules(rules){
+  if(!rules || !settings || !state || state.status!=='ongoing') return;
+  // 大会途中の時間短縮等に対応し、得点制とセッティング条件も現在進行中の試合へ反映する。
+  // 既に記録済みの得点・ゲーム結果は変更しない。変更後の次の得点判定から新ルールを使う。
+  if(rules.points===15 || rules.points===21){
+    settings.pointsTarget=Number(rules.points);
+  }
+  if(typeof rules.deuce==='boolean') settings.deuce=rules.deuce;
+  if(settings.deuce){
+    const fallback=settings.pointsTarget===15 ? 21 : 30;
+    const dm=Number(rules.deuceMax);
+    settings.deuceMax=(Number.isFinite(dm) && dm>settings.pointsTarget) ? dm : fallback;
+  }else{
+    settings.deuceMax=settings.pointsTarget;
+  }
+  saveActiveMatchLocal();
+}
+function applyTaikaRulesToForm(rules){
+  if(!rules) return;
+  applyTaikaIntervalSettings(rules);
+  if(rules.format === 'single' || rules.format === 'best3'){
+    curFormat = rules.format;
+    setSeg(segFormat, curFormat);
+  }
+  if(rules.points === 15 || rules.points === 21){
+    curPoints = rules.points;
+    setSeg(segPoints, String(rules.points));
+    customPointsRow.classList.remove('show');
+  }
+  if(typeof rules.deuce === 'boolean'){
+    curDeuce = rules.deuce;
+    setSeg(segDeuce, rules.deuce ? 'on' : 'off');
+    deuceMaxRow.classList.toggle('show', rules.deuce);
+  }
+  if(rules.deuceMax){
+    deuceMax.value = rules.deuceMax;
+  }
+}
+function sameTaikaAssignment(localCourt, remoteCourt){
+  if(!localCourt || !remoteCourt || !localCourt.match || !remoteCourt.match) return false;
+  var la=localCourt.assignmentId || localCourt.match.assignmentId || '';
+  var ra=remoteCourt.assignmentId || remoteCourt.match.assignmentId || '';
+  if(la && ra) return la===ra;
+  var lm=localCourt.match.id || localCourt.match.matchCode || '';
+  var rm=remoteCourt.match.id || remoteCourt.match.matchCode || '';
+  return !!lm && lm===rm;
+}
+function stopLocalMatchForRemoteConflict(message){
+  state=null; match=null; historyStack=[];
+  clearActiveMatchLocal();
+  lastTaikaMatchId=null;
+  showSettings();
+  clearTaikaMatchForm();
+  settingsErr.textContent=message || '大会Now側の配信状態が変更されたため、この端末の試合を停止しました。';
+}
+function applyTaikaLiveSnapshotForViewing(data){
+  // QRから「すでに進行中」のコートへ入った端末でも、操作権の有無に関係なく
+  // 大会Now側に保存された最新スナップショットを即座に得点盤へ復元する。
+  // 観戦端末はrender()しても mirrorTaikaLiveScore/pushRemote が書込みを抑止するため受信専用になる。
+  const snap=data && data.live && data.live.snapshot;
+  if(!snap || !snap.settings || !snap.state || !snap.match) return false;
+  if(snap.match.status!=='ongoing' && snap.state.status!=='ongoing') return false;
+  settings=snap.settings;
+  state=snap.state;
+  match=snap.match;
+  historyStack=[];
+  taikaSidesSwapped=!!(data.live && data.live.sidesSwapped);
+  saveActiveMatchLocal();
+  showBoard();
+  render();
+  return true;
+}
+function startTaikaListener(){
+  stopTaikaListener();
+  const ref = taikaCourtRef();
+  if(!ref) return;
+  taikaCourtListenerRef = ref;
+  ref.on('value', snap=>{
+    const data = snap.val();
+    const taikaCourtDataBeforeUpdate = taikaCourtData;
+    taikaCourtData = data;
+    renderTaikaStatusHint(data);
+    // 新しい端末で進行中コートのQRを読んだ場合、設定画面で止めず最新スコアを即表示する。
+    // currentMatch側の同期がまだ届いていない場合のフォールバックにもなる。
+    if(data && data.status==='live' && data.match && !spectatorViewingPaused){
+      // 大会Nowの live.snapshot を盤面へ適用するのは観戦端末だけ。
+      // 操作端末は自分のローカル状態を唯一の正として扱う。特にゲームポイント直後は
+      // 15点を書いた直後に14点時点の遅延valueイベントが返ることがあり、ここでsnapshotを
+      // 適用すると15→14へ巻き戻って終了処理が止まるため、操作権保持中は絶対に上書きしない。
+      if(!hasCourtOperationRight()){
+        const applied=applyTaikaLiveSnapshotForViewing(data);
+        if(!applied && (!state || state.status!=='ongoing')) openLinkedLiveCourtImmediately();
+      }
+    }
+    // 操作端末が最終点を確定して結果画面へ遷移している短い間は、
+    // 直前スコアの遅延イベントを競合判定にも使わない。
+    if(localFinishInProgress && hasCourtOperationRight()) return;
+    // 試合中も大会Nowを監視し、コートが未配信になったり別試合へ差し替わった場合は
+    // ローカルだけ試合中のまま残さない（split-brain防止）。
+    if(state && state.status === 'ongoing'){
+      var remoteValid=!!(data && data.status==='live' && data.match);
+      var same=taikaCourtDataBeforeUpdate ? sameTaikaAssignment(taikaCourtDataBeforeUpdate,data) : remoteValid;
+      // 自分で『開始取消』を実行した直後は、大会Nowが live→assigned になるのが正常。
+      // この遷移を競合扱いしてフォームを初期化するとLEFT/RIGHTが元に戻るため、
+      // 同一配信のassignedへの遷移だけはそのまま受け入れる。
+      if(taikaCancelStartInProgress && data && data.status==='assigned' && data.match && same){
+        return;
+      }
+      if(!remoteValid || !same){
+        stopLocalMatchForRemoteConflict('大会Now側の配信状態が変更されたため試合を停止しました。運営画面のコート状態を確認してください。');
+      }
+      return;
+    }
+    // 「配信済み」だけでなく「進行中」のコートを後から開いた場合も、
+    // 大会Now側の現在試合を設定画面へ復元する。
+    // これにより大会Nowのコートリンクからバドるを開き直しても選手名が空欄にならない。
+    if(!data || data.status === 'idle' || !data.match){
+      lastTaikaMatchId = null;
+      clearTaikaMatchForm();
+      return;
+    }
+    if(data && (data.status === 'assigned' || data.status === 'live') && data.match){
+      const matchId = data.match.id || (data.match.matchCode + '_' + JSON.stringify(data.match.teamA));
+      if(matchId !== lastTaikaMatchId){
+        lastTaikaMatchId = matchId;
+        taikaSidesSwapped = false;
+        applyTaikaMatchToForm(data.match);
+      }
+    }
+  });
+  const rulesRef = taikaEventRulesRef();
+  if(rulesRef){
+    taikaRulesListenerRef = rulesRef;
+    rulesRef.on('value', snap=>{
+      const rules=snap.val();
+      // 大会Nowの設定変更は、開始済み試合には適用しない。
+      // 設定画面側（次に開始する試合）だけを最新値へ更新する。
+      // 現在進行中の settings/state/match は変更しないため、複数端末でも試合途中に
+      // 得点制・セッティング・インターバル・試合形式が変化しない。
+      applyTaikaRulesToForm(rules);
+    });
+  }
+  watchTaikaEventForLiteDispatch();
+}
+function reapplyTaikaLink(){
+  applyTaikaLinkToMatchRef();
+  applyTaikaLockUI();
+  if(taikaLink && taikaLink.enabled){
+    startTaikaListener();
+    startCourtLock();
+    // コート番号はスコアシート用の「コート番号」欄にも即座に反映する
+    if(taikaLink.courtNo){
+      const courtNumberInp = document.getElementById('courtNumber');
+      if(courtNumberInp) courtNumberInp.value = taikaLink.courtNo;
+    }
+  }else{
+    stopTaikaListener();
+    stopCourtLock();
+    renderTaikaStatusHint(null);
+  }
+}
+function applyTaikaLockUI(){
+  // 大会Now連携中は、選手名の左右入替・ファーストサーバー/レシーバー選択・試合開始以外を
+  // 操作できないようにする（選手名欄自体は表示するが読み取り専用にする）
+  const locked = !!(taikaLink && taikaLink.enabled);
+  const settingsDiv = document.getElementById('settings'); // settingsEl定義前にも呼ばれるためTDZ回避で直接取得
+  if(settingsDiv) settingsDiv.classList.toggle('taika-locked', locked);
+  const scanBtn = document.getElementById('scanTaikaQrBtn');
+  if(scanBtn) scanBtn.textContent = locked ? '別の大会NowのQRを読み取る' : '大会NowのQRを読み取る';
+  ['nameA1','nameA2','nameB1','nameB2'].forEach(id=>{
+    const inp = document.getElementById(id);
+    if(inp) inp.readOnly = locked;
+  });
+  updateCourtBadge();
+}
+function openCourtSelector(){
+  if(!(taikaLink && taikaLink.enabled) || (state && state.status === 'ongoing')) return;
+  const ov=document.getElementById('courtSelectOverlay');
+  const box=document.getElementById('courtSelectButtons');
+  if(!ov || !box) return;
+  const count=Math.max(1, Number((taikaEventDataCache&&taikaEventDataCache.courtCount)||taikaLink.courtNo||1));
+  box.innerHTML='';
+  for(let i=1;i<=count;i++){
+    const b=document.createElement('button');
+    b.type='button'; b.textContent=`コート ${i}`;
+    if(String(i)===String(taikaLink.courtNo)) b.classList.add('current');
+    b.addEventListener('click',()=>switchTaikaCourt(i));
+    box.appendChild(b);
+  }
+  ov.classList.add('active');
+}
+function switchTaikaCourt(courtNo){
+  courtNo=String(courtNo);
+  if(!taikaLink || !taikaLink.enabled){
+    document.getElementById('courtSelectOverlay')?.classList.remove('active'); return;
+  }
+  const eventId=taikaLink.eventId;
+  // 現在選択中のコートでも、設定画面へ戻った後に大会Now上では live のままなら
+  // その試合へ再入場できるようにする。全てのバドる端末が得点盤を閉じても、
+  // 大会Nowの live 状態 + currentMatch/live.snapshot から得点盤へ復帰できる。
+  if(courtNo===String(taikaLink.courtNo)){
+    const currentRef=(dbReady && db) ? db.ref('taikainow/' + eventId + '/courts/' + courtNo) : null;
+    if(!currentRef){ document.getElementById('courtSelectOverlay')?.classList.remove('active'); return; }
+    currentRef.once('value').then(snap=>{
+      const currentData=snap.val();
+      if(currentData && currentData.status==='live' && currentData.match){
+        const ok=window.confirm('このコートでは試合が進行中です。同じ試合に入りますか？');
+        if(!ok) return;
+        spectatorViewingPaused=false;
+        document.getElementById('courtSelectOverlay')?.classList.remove('active');
+        openLinkedLiveCourtImmediately().then(opened=>{
+          if(!opened) settingsErr.textContent='進行中の試合データを取得できませんでした。もう一度お試しください。';
+        });
+      }else{
+        document.getElementById('courtSelectOverlay')?.classList.remove('active');
+      }
+    }).catch(()=>document.getElementById('courtSelectOverlay')?.classList.remove('active'));
+    return;
+  }
+  const targetRef=(dbReady && db) ? db.ref('taikainow/' + eventId + '/courts/' + courtNo) : null;
+  const proceed=(targetData)=>{
+    const isLive=!!(targetData && targetData.status==='live' && targetData.match);
+    if(isLive){
+      const ok=window.confirm('すでに別端末で試合を開始しています。同じ試合に入りますか？');
+      if(!ok) return;
+      // 明示的に観戦へ入る操作なので、以前の「観戦中断」状態を解除する。
+      spectatorViewingPaused=false;
+    }
+    stopTaikaListener(); stopCourtLock();
+    taikaLink={eventId:eventId,courtNo,enabled:true};
+    saveTaikaLink(taikaLink);
+    try{ const u=new URL(location.href); u.searchParams.set('court',courtNo); history.replaceState(null,'',u.toString()); }catch(e){}
+    const tc=document.getElementById('taikaCourtNo'); if(tc) tc.value=courtNo;
+    const cn=document.getElementById('courtNumber'); if(cn) cn.value=courtNo;
+    lastTaikaMatchId=null; taikaCourtData=null;
+    state=null; match=null; historyStack=[]; clearActiveMatchLocal();
+    clearTaikaMatchForm();
+    renderTaikaStatusHint(targetData || {status:'idle', match:null});
+    document.getElementById('courtSelectOverlay')?.classList.remove('active');
+    reapplyTaikaLink();
+    // liveならlistenerがlive.snapshotを受信し、現在スコアの得点盤へ直接遷移する。
+  };
+  if(!targetRef){ proceed(null); return; }
+  targetRef.once('value').then(snap=>proceed(snap.val())).catch(()=>proceed(null));
+}
+function updateCourtBadge(){
+  // 連携中は、設定画面・得点盤面のどちらにいても常に一目でコート番号がわかるよう、
+  // 専用のバッジを固定表示する
+  const show = !!(taikaLink && taikaLink.enabled && taikaLink.courtNo);
+  const text = show ? `コート ${taikaLink.courtNo}` : '';
+  const badgeSettings = document.getElementById('courtBadgeSettings');
+  const badgeBoard = document.getElementById('courtBadgeBoard');
+  if(badgeSettings){
+    badgeSettings.textContent = text;
+    badgeSettings.style.display = show ? '' : 'none';
+  }
+  if(badgeBoard){
+    badgeBoard.textContent = text;
+    badgeBoard.style.display = show ? '' : 'none';
+  }
+}
+function notifyTaikaMatchLive(){
+  const ref = taikaCourtRef();
+  if(!ref) return;
+  // 大会Now側の『配信取りやめ』と同時操作になっても、取消済みコートを
+  // status=live に復活させないよう transaction で配信状態を再確認する。
+  const expected = taikaCourtData && taikaCourtData.match;
+  const expectedAssignmentId = taikaCourtData && (taikaCourtData.assignmentId || (expected && expected.assignmentId));
+  const expectedId = expected && (expected.id || expected.matchCode || null);
+  const now = Date.now();
+  return ref.transaction(court=>{
+    if(!court || court.status !== 'assigned' || !court.match) return;
+    const actualAssignmentId = court.assignmentId || court.match.assignmentId || null;
+    const actualId = court.match.id || court.match.matchCode || null;
+    if(expectedAssignmentId && actualAssignmentId && expectedAssignmentId !== actualAssignmentId) return;
+    if(expectedId && actualId && expectedId !== actualId) return;
+    return Object.assign({}, court, {status:'live', live:null, startedAt:now, updatedAt:now});
+  }).then(result=>!!(result && result.committed)).catch(err=>{
+    console.error('試合開始状態の同期に失敗しました', err);
+    return false;
+  });
+}
+function calcOfficialRetirementPoints(){
+  // 棄権時の公式スコア：実際に取得済みの得点は残し、未取得分は勝者側が取得したものとして補完する。
+  // 例 21-18, 17-10でA棄権 → 21-18, 17-21, 0-21（21点制の場合）
+  if(!match || !match.retired) return null;
+  const winner = match.retiredSide === 'A' ? 'B' : 'A';
+  const target = Number(settings.pointsTarget) || 21;
+  const gamesToWin = match.gamesToWin || 1;
+  const games = (match.games || []).map(g=>({A:Number(g.score.A)||0, B:Number(g.score.B)||0}));
+  if(games.length){
+    const last = games[games.length-1];
+    // 棄権が発生したゲームは、勝者がそのゲームの目標点まで取得したものとする。
+    if(last[winner] < target) last[winner] = target;
+  }
+  let winnerGames = games.filter(g=>g[winner] > g[otherTeam(winner)]).length;
+  while(winnerGames < gamesToWin){
+    const g={A:0,B:0}; g[winner]=target; games.push(g); winnerGames++;
+  }
+  return {
+    games,
+    pointsA: games.reduce((sum,g)=>sum+g.A,0),
+    pointsB: games.reduce((sum,g)=>sum+g.B,0)
+  };
+}
+
+function notifyTaikaMatchFinished(result){
+  const ref = taikaCourtRef();
+  if(!ref) return;
+  // バドるの A/B は画面上の LEFT/RIGHT。大会Nowの A/B は配信時の組合せなので、
+  // 左右を入れ替えている場合は結果を配信時の A/B に戻してから送る。
+  if(taikaSidesSwapped && result){
+    result = Object.assign({}, result, {
+      winner: result.winner==='A' ? 'B' : (result.winner==='B' ? 'A' : result.winner),
+      gameWinsA: result.gameWinsB,
+      gameWinsB: result.gameWinsA,
+      teamA: result.teamB,
+      teamB: result.teamA,
+      retiredSide: result.retiredSide==='A' ? 'B' : (result.retiredSide==='B' ? 'A' : result.retiredSide)
+    });
+  }
+  lastTaikaMatchId = null;
+  const expectedAssignmentId = taikaCourtData && (taikaCourtData.assignmentId || (taikaCourtData.match && taikaCourtData.match.assignmentId));
+  const expectedMatchId = taikaCourtData && taikaCourtData.match && (taikaCourtData.match.id || taikaCourtData.match.matchCode || null);
+  const retirementOfficial = calcOfficialRetirementPoints();
+  const pointsA = retirementOfficial ? retirementOfficial.pointsA : ((match && match.games) ? match.games.reduce((s,g)=>s+g.score.A, 0) : 0);
+  const pointsB = retirementOfficial ? retirementOfficial.pointsB : ((match && match.games) ? match.games.reduce((s,g)=>s+g.score.B, 0) : 0);
+  const assignedMatch = (taikaCourtData && taikaCourtData.match) ? taikaCourtData.match : null;
+  const refInfo = assignedMatch
+    ? { refType: assignedMatch.refType || null, refId: assignedMatch.refId || null, refMatchIndex: (assignedMatch.refMatchIndex !== undefined ? assignedMatch.refMatchIndex : null) }
+    : { refType: null, refId: null, refMatchIndex: null };
+  const gameScores = retirementOfficial
+    ? retirementOfficial.games.map(g=>({A:Number(g.A)||0,B:Number(g.B)||0}))
+    : ((match && match.games) ? match.games.map(g=>({A:Number(g.score && g.score.A)||0,B:Number(g.score && g.score.B)||0})) : []);
+  const normalizedPointsA = taikaSidesSwapped ? pointsB : pointsA;
+  const normalizedPointsB = taikaSidesSwapped ? pointsA : pointsB;
+  const normalizedOfficialGames = retirementOfficial ? retirementOfficial.games.map(g=>taikaSidesSwapped ? {A:Number(g.B)||0,B:Number(g.A)||0} : {A:Number(g.A)||0,B:Number(g.B)||0}) : null;
+  const normalizedGameScores = gameScores.map(g=>taikaSidesSwapped ? {A:Number(g.B)||0,B:Number(g.A)||0} : {A:Number(g.A)||0,B:Number(g.B)||0});
+  const payload = Object.assign({ pointsA:normalizedPointsA, pointsB:normalizedPointsB, officialGames:normalizedOfficialGames, gameScores:normalizedGameScores }, result, refInfo);
+  // 終了通知も同じ配信IDの live 試合にだけ反映する。古いバドる端末が別試合を消すことを防ぐ。
+  return ref.transaction(court=>{
+    if(!court || court.status!=='live' || !court.match) return;
+    const actualAssignmentId=court.assignmentId || court.match.assignmentId || null;
+    const actualMatchId=court.match.id || court.match.matchCode || null;
+    if(expectedAssignmentId && actualAssignmentId && expectedAssignmentId!==actualAssignmentId) return;
+    if(expectedMatchId && actualMatchId && expectedMatchId!==actualMatchId) return;
+    return Object.assign({},court,{status:'idle',match:null,live:null,assignmentId:null,lastResult:payload,finishedAt:Date.now(),updatedAt:Date.now()});
+  }).catch(()=>{});
+}
+function mirrorTaikaLiveScore(){
+  if(!state || !match) return;
+  // 大会Nowのlive情報を書き換えられるのは、そのコートの操作権を持つ端末だけ。
+  // 観戦端末がrender()のたびに自分の古い状態を書き戻すと、スコア逆戻り・同期停止の原因になる。
+  if(taikaLink && taikaLink.enabled && !hasCourtOperationRight()) return;
+  const ref = taikaCourtRef();
+  if(!ref) return;
+  ref.child('live').set({
+    deviceId: DEVICE_ID,
+    ownerAcquiredAt:(courtLockOwner&&courtLockOwner.deviceId===DEVICE_ID)?courtLockOwner.acquiredAt:null,
+    scoreA: state.score.A,
+    scoreB: state.score.B,
+    gameWinsA: match.gameWins.A,
+    gameWinsB: match.gameWins.B,
+    // true の場合、scoreA/gameWinsA は配信時 teamB（現在の画面左側）の値。
+    sidesSwapped: !!taikaSidesSwapped,
+    // 端末故障・操作権移行時に、別端末が待たずに試合状態を丸ごと復元できるバックアップ。
+    snapshot:{settings:settings,state:state,match:match},
+    updatedAt:Date.now()
+  }).catch(()=>{});
+}
+let qrScanStream=null, qrScanRAF=0, qrDetector=null, qrJsLoaded=false;
+const qrScanOverlay=document.getElementById('qrScanOverlay');
+const qrScanVideo=document.getElementById('qrScanVideo');
+const qrScanMsg=document.getElementById('qrScanMsg');
+function stopTaikaQrScan(){
+  if(qrScanRAF){ cancelAnimationFrame(qrScanRAF); qrScanRAF=0; }
+  if(qrScanStream){ qrScanStream.getTracks().forEach(t=>t.stop()); qrScanStream=null; }
+  try{ qrScanVideo.pause(); qrScanVideo.srcObject=null; }catch(e){}
+  qrScanOverlay.classList.remove('show'); qrScanOverlay.setAttribute('aria-hidden','true');
+}
+function openLinkedLiveCourtImmediately(){
+  spectatorViewingPaused = false;
+  // QRで既に進行中のコートを読み込んだ場合は、設定画面を経由せず得点盤へ直行する。
+  // 大会Now側live.snapshotとバドる側currentMatchの両方を同時に確認し、
+  // より完全なcurrentMatchを優先して復元する。操作権の有無は画面表示とは分離し、
+  // ロック所有者でなければ観戦モード、取得後はそのまま操作可能にする。
+  if(!(taikaLink && taikaLink.enabled) || !dbReady || !matchRef) return Promise.resolve(false);
+  const cref=taikaCourtRef();
+  if(!cref) return Promise.resolve(false);
+  return Promise.all([
+    cref.once('value').then(s=>s.val()).catch(()=>null),
+    matchRef.once('value').then(s=>s.val()).catch(()=>null)
+  ]).then(([court,remote])=>{
+    taikaCourtData=court;
+    if(!court || court.status!=='live' || !court.match) return false;
+    let src=null;
+    // 大会Nowでliveになっているコートでは、そのコート自身のlive.snapshotを最優先する。
+    // currentMatchは端末切替の瞬間に古い値/空値になり得るため、復旧の主ソースにはしない。
+    if(court.live && court.live.snapshot && court.live.snapshot.settings && court.live.snapshot.state && court.live.snapshot.match) src=court.live.snapshot;
+    else if(remote && remote.settings && remote.state && remote.match &&
+       (remote.match.status==='ongoing' || remote.state.status==='ongoing' || remote.state.status==='finished')) src=remote;
+    if(!src) return false;
+    settings=src.settings; state=src.state; match=src.match; historyStack=[];
+    taikaSidesSwapped=!!(court.live && court.live.sidesSwapped);
+    saveActiveMatchLocal();
+    showBoard();
+    render();
+    // startCourtLock()のvalueイベントで最終的な観戦/操作表示が確定するが、
+    // 既存ロックが別端末なら即時に観戦扱いにして誤操作を防ぐ。
+    return courtLockPathRef().once('value').then(s=>{
+      const owner=s.val();
+      if(owner && owner.deviceId!==DEVICE_ID && (!owner.heartbeatAt || Date.now()-owner.heartbeatAt<=COURT_LOCK_STALE_MS)) setCourtReadOnly(true,owner);
+      return true;
+    }).catch(()=>true);
+  }).catch(e=>{ console.warn('QR読込後の進行中試合復元に失敗しました',e); return false; });
+}
+
+function applyTaikaQrText(text){
+  let u;
+  try{ u=new URL(String(text||'').trim(), location.href); }catch(e){ throw new Error('QRコードのURLを読み取れませんでした'); }
+  const eventId=u.searchParams.get('taikaEvent');
+  const courtNo=u.searchParams.get('court');
+  if(!eventId || !courtNo || !/^\d+$/.test(courtNo)) throw new Error('大会Nowのコート用QRコードではありません');
+
+  // 別大会・別コートのQRを読むとき、以前の試合のrev/stateが残っていると
+  // 新しいコートの進行中データを「古い更新」と誤判定して取り込めないため、
+  // 連携先を切り替える前に端末上の旧試合状態だけを破棄する。
+  state=null; match=null; historyStack=[];
+  lastTaikaMatchId=null;
+  taikaSidesSwapped=false;
+  clearActiveMatchLocal();
+
+  taikaLink={eventId:eventId,courtNo:courtNo,enabled:true};
+  saveTaikaLink(taikaLink);
+  taikaEventIdInp.value=eventId; taikaCourtNoInp.value=courtNo; setTaikaSeg('on');
+  stopTaikaQrScan();
+  settingsErr.textContent='QRコードを読み取りました。大会Now・コート'+courtNo+'に連携しました。';
+  reapplyTaikaLink();
+  // 進行中ならQR読込完了と同時にスコア画面へ。既存操作端末があれば観戦モードで開く。
+  openLinkedLiveCourtImmediately().then(opened=>{
+    if(opened) settingsErr.textContent='';
+  });
+}
+function loadJsQR(){
+  if(window.jsQR){ qrJsLoaded=true; return Promise.resolve(); }
+  return new Promise((resolve,reject)=>{
+    const sc=document.createElement('script'); sc.src='https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js';
+    sc.onload=()=>{qrJsLoaded=true;resolve();}; sc.onerror=()=>reject(new Error('QR読み取り機能を読み込めませんでした'));
+    document.head.appendChild(sc);
+  });
+}
+async function scanTaikaQrFrame(){
+  if(!qrScanStream) return;
+  try{
+    if(qrDetector){
+      const codes=await qrDetector.detect(qrScanVideo);
+      if(codes && codes[0] && codes[0].rawValue){ applyTaikaQrText(codes[0].rawValue); return; }
+    }else if(window.jsQR && qrScanVideo.readyState>=2){
+      const c=document.createElement('canvas'), w=qrScanVideo.videoWidth, h=qrScanVideo.videoHeight;
+      if(w&&h){ c.width=w;c.height=h;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(qrScanVideo,0,0,w,h);const im=x.getImageData(0,0,w,h);const code=window.jsQR(im.data,w,h,{inversionAttempts:'dontInvert'});if(code&&code.data){applyTaikaQrText(code.data);return;} }
+    }
+  }catch(e){ if(!qrScanStream) return; }
+  qrScanRAF=requestAnimationFrame(scanTaikaQrFrame);
+}
+async function startTaikaQrScan(){
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){ settingsErr.textContent='この端末ではカメラ読み取りを利用できません'; return; }
+  qrScanOverlay.classList.add('show'); qrScanOverlay.setAttribute('aria-hidden','false'); qrScanMsg.textContent='カメラを準備しています…';
+  try{
+    if('BarcodeDetector' in window){
+      try{ const formats=await BarcodeDetector.getSupportedFormats(); if(formats.includes('qr_code')) qrDetector=new BarcodeDetector({formats:['qr_code']}); }catch(e){}
+    }
+    if(!qrDetector) await loadJsQR();
+    qrScanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});
+    qrScanVideo.srcObject=qrScanStream; await qrScanVideo.play();
+    qrScanMsg.textContent='コートカードに表示したQRコードを枠内に入れてください';
+    scanTaikaQrFrame();
+  }catch(e){
+    stopTaikaQrScan();
+    settingsErr.textContent=(e && (e.name==='NotAllowedError'||e.name==='PermissionDeniedError'))?'カメラの使用が許可されていません。iPadの設定でバドるのカメラ利用を許可してください。':'QRコード読み取りを開始できませんでした。';
+  }
+}
+document.getElementById('scanTaikaQrBtn').addEventListener('click',startTaikaQrScan);
+document.getElementById('qrScanClose').addEventListener('click',stopTaikaQrScan);
+qrScanOverlay.addEventListener('click',e=>{if(e.target===qrScanOverlay)stopTaikaQrScan();});
+
+if(taikaLink){
+  taikaEventIdInp.value = taikaLink.eventId || '';
+  taikaCourtNoInp.value = taikaLink.courtNo || '';
+  setTaikaSeg(taikaLink.enabled ? 'on' : 'off');
+}else{
+  setTaikaSeg('off');
+}
+segTaikaLink.addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  const enabled = btn.dataset.v === 'on';
+  taikaLink = {
+    eventId: taikaEventIdInp.value.trim(),
+    courtNo: taikaCourtNoInp.value.trim(),
+    enabled: enabled && !!taikaEventIdInp.value.trim() && !!taikaCourtNoInp.value.trim()
+  };
+  if(enabled && !taikaLink.enabled){
+    settingsErr.textContent = '大会IDとコート番号を入力してから連携してください';
+  }else{
+    settingsErr.textContent = '';
+  }
+  setTaikaSeg(taikaLink.enabled ? 'on' : 'off');
+  saveTaikaLink(taikaLink);
+  reapplyTaikaLink();
+});
+[taikaEventIdInp, taikaCourtNoInp].forEach(inp=>{
+  inp.addEventListener('change', ()=>{
+    if(!taikaLink || !taikaLink.enabled) return;
+    const nextLink = { eventId: taikaEventIdInp.value.trim(), courtNo: taikaCourtNoInp.value.trim(), enabled: true };
+    const linkChanged = !taikaLink || String(taikaLink.eventId||'')!==String(nextLink.eventId||'') || String(taikaLink.courtNo||'')!==String(nextLink.courtNo||'');
+    if(linkChanged){
+      state=null; match=null; historyStack=[]; lastTaikaMatchId=null; taikaSidesSwapped=false; clearActiveMatchLocal();
+    }
+    taikaLink = nextLink;
+    saveTaikaLink(taikaLink);
+    reapplyTaikaLink();
+  });
+});
+reapplyTaikaLink();
+// PWA/ブラウザを開き直した時点ですでに連携コートが live なら、
+// ローカルに得点盤が残っていなくても現在の試合へ復帰できるようにする。
+if(taikaLink && taikaLink.enabled && !state && !spectatorViewingPaused){
+  setTimeout(()=>{ openLinkedLiveCourtImmediately(); }, 0);
+}
+
+refreshPlayerSelects();
+document.getElementById('startBtn').addEventListener('click', ()=>{
+  // Fullscreen API はユーザー操作中に直接呼ぶ必要がある。
+  // 大会Nowの fullscreen=1 連携では「試合開始」のタップを確実な起点にする。
+  enterTaikaFullscreen();
+  if(!hasCourtOperationRight()) return;
+  // 大会Now連携中は、運営側から現在のコートへ試合が配信されている場合だけ開始できる。
+  // 配信待ち（コートデータなし／idle／matchなし）では、DOMのdisabled状態に関係なく開始を拒否する。
+  if(taikaLink && taikaLink.enabled){
+    const hasDispatchedMatch = !!(taikaCourtData && taikaCourtData.match &&
+      taikaCourtData.status === 'assigned');
+    if(!hasDispatchedMatch){
+      settingsErr.textContent = '大会Nowから試合が配信されるまで開始できません';
+      renderTaikaStatusHint(taikaCourtData);
+      return;
+    }
+  }
+  settingsErr.textContent = '';
+  const players = currentPlayers();
+
+  let target = curPoints;
+  if(target === 'custom'){
+    target = parseInt(customPoints.value, 10);
+    if(!target || target < 3){
+      settingsErr.textContent = '得点数を正しく入力してください';
+      return;
+    }
+  }
+
+  let dMax = curDeuce ? parseInt(deuceMax.value, 10) : target;
+  if(curDeuce && (!dMax || dMax <= target)){
+    settingsErr.textContent = 'セッティング時の最大点は目標点より大きい値を入力してください';
+    return;
+  }
+
+  const firstServer = firstServerSel.value;
+  const firstReceiver = firstReceiverSel.value;
+
+  settings = {
+    matchType: curType,
+    matchFormat: curFormat,
+    pointsTarget: target,
+    deuce: curDeuce,
+    deuceMax: dMax,
+    intervalEnabled: taikaIntervalSettings.intervalEnabled,
+    midIntervalSec: taikaIntervalSettings.midIntervalSec,
+    gameIntervalSec: taikaIntervalSettings.gameIntervalSec,
+    players,
+    playerClubs: currentTeamClubs,
+    firstServer,
+    firstReceiver,
+    initialLeftTeam: 'A',
+    tournamentName: document.getElementById('tournamentName').value.trim(),
+    matchNumber: document.getElementById('matchNumber').value.trim(),
+    venueName: document.getElementById('venueName').value.trim(),
+    courtNumber: document.getElementById('courtNumber').value.trim()
+  };
+
+  if(taikaLink && taikaLink.enabled){
+    // 大会Now側で同時に「配信取りやめ」が押された場合にローカルだけ試合開始しないよう、
+    // Firebase上で assigned→live を確保できてから得点盤を開始する。
+    const startBtnEl=document.getElementById('startBtn');
+    if(startBtnEl) startBtnEl.disabled=true;
+    notifyTaikaMatchLive().then(committed=>{
+      if(!committed){
+        settingsErr.textContent='配信状態が変更されたため開始できません。大会Nowの配信を確認してください';
+        renderTaikaStatusHint(taikaCourtData);
+        return;
+      }
+      startNewMatch();
+    });
+  }else{
+    startNewMatch();
+  }
+});
+
+/* ---------- 使い方モーダル ---------- */
+const HELP_SECTIONS = [
+  { title:'① 基本の使い方', lines:[
+    '選手名・種目・試合形式（1/3ゲームマッチ）・得点（15/21/カスタム）・セッティング（デュース）有無を設定し、「試合開始」を押します。',
+    'コート中央をタップして得点、Undoで取り消し、開始取消で誤って開始した試合を試合設定画面へ戻します。'
+  ]},
+  { title:'② 棄権の記録', lines:[
+    '<b>試合中の棄権</b>：盤面の「棄権」ボタンでどちら側が棄権したかを選ぶと、相手の勝ちとして即座に決着します。',
+    '棄権した選手は、大会Nowと連携している場合、以後の未実施の試合もすべて自動的に不戦敗になります。',
+    '試合を始める前の欠場・不戦敗の登録は、大会Now側の「設定」タブから行います。',
+    'スコアシートには「棄権」の表記が入り、大会Now連携時はリーグ表にも反映されます。'
+  ]},
+  { title:'③ スコアシート', lines:[
+    '試合終了・棄権では、公式様式に近いスコアシートが自動作成されます。開始取消では結果を作成せず、配信を維持したまま試合設定画面へ戻ります。',
+    '印刷やメールへの貼り付けにも対応しています。'
+  ]},
+  { title:'④ 大会Now連携', lines:[
+    '設定画面の「大会Now連携」欄で大会ID・コート番号を入力して連携するか、大会Nowの設定タブで発行される<b>コートごとの連携リンク（URL・QR）を一度開く</b>だけで自動連携できます。',
+    '連携すると、配信された試合の選手名・種目が自動で反映され、試合終了時の結果も自動で大会Nowへ送られます。',
+    '大会Now側で設定した「試合ルール」（試合形式・得点・デュース）も自動で反映されます（試合中は上書きされません）。',
+    '連携中は、盤面・設定画面にそのタブレットが担当しているコート番号が表示されます。'
+  ]}
+];
+function renderHelpModal(){
+  const wrap = document.getElementById('helpModalScroll');
+  wrap.innerHTML = HELP_SECTIONS.map(sec=>{
+    return `<div class="help-modal-section"><div class="help-modal-section-title">${sec.title}</div><ul class="help-modal-list">${sec.lines.map(l=>`<li>${l}</li>`).join('')}</ul></div>`;
+  }).join('');
+}
+document.getElementById('helpBtn').addEventListener('click', ()=>{
+  renderHelpModal();
+  document.getElementById('helpModalBg').classList.add('active');
+});
+document.getElementById('helpModalClose').addEventListener('click', ()=>{
+  document.getElementById('helpModalBg').classList.remove('active');
+});
+document.getElementById('helpModalBg').addEventListener('click', (e)=>{
+  if(e.target.id === 'helpModalBg') document.getElementById('helpModalBg').classList.remove('active');
+});
+
+/* ---------- 試合状態の初期化 ---------- */
+function startNewMatch(){
+  match = {
+    format: settings.matchFormat,
+    gamesToWin: settings.matchFormat === 'best3' ? 2 : 1,
+    games: [],
+    gameWins: { A:0, B:0 },
+    status: 'ongoing',
+    overallWinner: null,
+    startedAt: Date.now(),
+    finishedAt: null
+  };
+  startGame(1, settings.initialLeftTeam, settings.firstServer, settings.firstReceiver);
+}
+
+function startGame(gameNumber, leftTeam, firstServerName, firstReceiverName){
+  // 前ゲームの終了処理フラグを必ず解除してから次ゲームを構築する。
+  // これが残ると、大会Now/Firebase監視が「終了処理中」と判断し続け、
+  // 第2ゲーム以降の操作・同期が止まることがある。
+  localFinishInProgress = false;
+  retirementInProgress = false;
+  clearTimeout(pendingFinishTimer);
+  pendingFinishTimer = null;
+
+  const serverTeam = teamOf(firstServerName) || 'A'; // 万一名前が一致しない場合でもクラッシュしないようフォールバック
+  const receiverTeam = otherTeam(serverTeam);
+
+  const positions = { A:{right:null,left:null}, B:{right:null,left:null} };
+
+  if(settings.matchType === 'doubles'){
+    const serverPartner = partnerOf(serverTeam, firstServerName);
+    positions[serverTeam] = { right: firstServerName, left: serverPartner };
+    const receiverPartner = partnerOf(receiverTeam, firstReceiverName);
+    positions[receiverTeam] = { right: firstReceiverName, left: receiverPartner };
+  }else{
+    positions[serverTeam] = { right: firstServerName, left: firstServerName };
+    positions[receiverTeam] = { right: firstReceiverName, left: firstReceiverName };
+  }
+
+  state = {
+    gameNumber,
+    rev: (state ? state.rev : 0) + 1,
+    score: { A:0, B:0 },
+    serverTeam,
+    positions,
+    leftTeam,
+    pointLog: [],
+    status: 'ongoing',
+    winner: null,
+    midGameEndsSwapped: false,
+    midIntervalTaken: false,
+    interval: null,
+    initialServer: firstServerName,
+    initialReceiver: firstReceiverName,
+    startedAt: Date.now(),
+    finishedAt: null
+  };
+  historyStack = [];
+
+  showBoard();
+  render();
+  pushRemote();
+}
+
+/* ---------- 共有インターバル ---------- */
+let intervalTimer=null;
+function intervalSecondsLeft(){
+  if(!state || !state.interval || !state.interval.active) return 0;
+  return Math.max(0,Math.ceil((Number(state.interval.endsAt||0)-Date.now())/1000));
+}
+function renderIntervalOverlay(){
+  const ov=document.getElementById('intervalOverlay');
+  if(!ov) return;
+  const active=!!(state && state.interval && state.interval.active);
+  ov.classList.toggle('active',active);
+  clearInterval(intervalTimer); intervalTimer=null;
+  if(!active) return;
+  const it=state.interval;
+  document.getElementById('intervalTitle').textContent=it.type==='game'?'ゲーム間インターバル':'インターバル';
+  const cd=document.getElementById('intervalCountdown');
+  const tick=()=>{ const left=intervalSecondsLeft(); cd.textContent=String(left); cd.classList.toggle('last20',left<=20); };
+  tick(); intervalTimer=setInterval(tick,250);
+  const start=document.getElementById('intervalStartBtn');
+  start.disabled=!hasCourtOperationRight();
+  start.textContent=hasCourtOperationRight()?'開始':'観戦中';
+  document.getElementById('intervalUndoBtn').style.display=(it.type==='game' && hasCourtOperationRight())?'inline-block':'none';
+}
+function beginSharedInterval(type, seconds, extra){
+  const sec=Math.max(0,Math.floor(Number(seconds)||0));
+  const now=Date.now();
+  state.interval=Object.assign({active:true,type:type,startedAt:now,endsAt:now+sec*1000,durationSec:sec},extra||{});
+  state.rev=(state.rev||0)+1;
+  saveActiveMatchLocal();
+  render();
+  void pushRemote();
+}
+function clearSharedInterval(sync){
+  if(!state) return;
+  state.interval=null;
+  state.rev=(state.rev||0)+1;
+  clearInterval(intervalTimer); intervalTimer=null;
+  document.getElementById('intervalOverlay')?.classList.remove('active');
+  saveActiveMatchLocal();
+  if(sync!==false) void pushRemote();
+}
+document.getElementById('intervalStartBtn').addEventListener('click',()=>{
+  if(!ensureCourtOperationRight() || !state || !state.interval || !state.interval.active) return;
+  const it=Object.assign({},state.interval);
+  if(it.type==='game'){
+    const gameNumber=Number(it.nextGameNumber)||state.gameNumber+1;
+    const prevWinTeam=it.prevWinTeam || state.winner || 'A';
+    const prevLeftTeam=state.leftTeam;
+    clearSharedInterval(false);
+    startGame(gameNumber,otherTeam(prevLeftTeam),settings.players[prevWinTeam][0],settings.players[otherTeam(prevWinTeam)][0]);
+  }else{
+    clearSharedInterval(true);
+    render();
+  }
+});
+document.getElementById('intervalUndoBtn').addEventListener('click',()=>{
+  if(!ensureCourtOperationRight()) return;
+  clearSharedInterval(false);
+  undoFinalPoint();
+  void pushRemote();
+});
+
+/* ---------- 得点ロジック ---------- */
+function snapshotState(){
+  return JSON.parse(JSON.stringify(state));
+}
+
+function currentServerPlayer(){
+  if(settings.matchType === 'singles'){
+    return settings.players[state.serverTeam][0];
+  }
+  const box = (state.score[state.serverTeam] % 2 === 0) ? 'right' : 'left';
+  return state.positions[state.serverTeam][box];
+}
+
+function serverBoxOf(team){
+  return (state.score[team] % 2 === 0) ? 'right' : 'left';
+}
+
+function checkWinner(){
+  const { A, B } = state.score;
+  const target = settings.pointsTarget;
+  const hi = Math.max(A,B), diff = Math.abs(A-B);
+  if(settings.deuce){
+    if(hi >= settings.deuceMax) return A > B ? 'A' : 'B';
+    if(hi >= target && diff >= 2) return A > B ? 'A' : 'B';
+    return null;
+  }else{
+    if(hi >= target) return A > B ? 'A' : 'B';
+    return null;
+  }
+}
+
+function awardPoint(winTeam){
+  if(!state || state.status !== 'ongoing') return;
+  historyStack.push(snapshotState());
+
+  const prevServerTeam = state.serverTeam;
+  const serverPlayerBefore = currentServerPlayer();
+
+  if(winTeam === prevServerTeam){
+    state.score[winTeam] += 1;
+    if(settings.matchType === 'doubles'){
+      const p = state.positions[winTeam];
+      const tmp = p.right; p.right = p.left; p.left = tmp;
+    }
+  }else{
+    state.serverTeam = winTeam;
+    state.score[winTeam] += 1;
+    // 受け取り側だったチーム(winTeam)のポジションはそのまま。サーバーは新しいスコアの奇偶で決まる
+  }
+
+  const newServerPlayer = currentServerPlayer();
+
+  state.pointLog.push({
+    seq: state.pointLog.length + 1,
+    scoreA: state.score.A,
+    scoreB: state.score.B,
+    winTeam,
+    serverTeamBefore: prevServerTeam,
+    serverPlayerBefore,
+    serverTeamAfter: state.serverTeam,
+    serverPlayerAfter: newServerPlayer
+  });
+
+  // 最終ゲームでのエンドチェンジ（目標点の半分に先に到達した時点で1度だけ）
+  if(match.format === 'best3' && state.gameNumber === 3 && !state.midGameEndsSwapped){
+    const swapAt = Math.ceil(settings.pointsTarget / 2);
+    if(state.score.A >= swapAt || state.score.B >= swapAt){
+      state.leftTeam = otherTeam(state.leftTeam);
+      state.midGameEndsSwapped = true;
+      showToast(swapAt + '点でエンドチェンジしました');
+    }
+  }
+
+  const w = checkWinner();
+  const midAt = settings.pointsTarget===15 ? 8 : (settings.pointsTarget===21 ? 11 : Math.ceil(settings.pointsTarget/2));
+  if(settings.intervalEnabled!==false && !w && !state.midIntervalTaken && (state.score.A>=midAt || state.score.B>=midAt)){
+    state.midIntervalTaken=true;
+    state.rev += 1;
+    try{ render(); }catch(e){}
+    beginSharedInterval('mid', Number(settings.midIntervalSec ?? 60));
+    return;
+  }
+  if(w){
+    // ゲームポイントは通常得点とは別経路で確定する。
+    // Firebase・観戦端末・render()の成否を、操作端末の終了画面遷移の前提にしない。
+    // これにより複数端末利用時でも 14→15 の最終点で盤面が停止しない。
+    finishGame(w);
+    state.rev += 1;
+
+    // まずローカル表示を15点へ更新する。描画に問題があっても終了処理は続行する。
+    try{ render(); }catch(e){ console.warn('最終点の盤面描画に失敗しましたが終了処理を継続します', e); }
+
+    // 終了UIを最優先で同期的に開く。Firebase応答やsetTimeoutを待たない。
+    try{
+      if(match.status==='finished') openScoreSheet();
+      else if(settings.intervalEnabled===false){
+        const prevLeftTeam=state.leftTeam;
+        startGame(state.gameNumber+1,otherTeam(prevLeftTeam),settings.players[w][0],settings.players[otherTeam(w)][0]);
+      }else beginSharedInterval('game', Number(settings.gameIntervalSec ?? 120), {nextGameNumber:state.gameNumber+1,prevWinTeam:w});
+    }catch(e){
+      console.error('ゲーム終了画面の表示に失敗しました', e);
+      // DOMの一時的な競合に備え、次のイベントループでもう一度だけ復旧する。
+      setTimeout(()=>{
+        try{
+          if(match && match.status==='finished') openScoreSheet();
+          else if(state && state.status==='finished' && !(state.interval&&state.interval.active)){
+            if(settings.intervalEnabled===false){
+              const prevLeftTeam=state.leftTeam;
+              startGame(state.gameNumber+1,otherTeam(prevLeftTeam),settings.players[w][0],settings.players[otherTeam(w)][0]);
+            }else beginSharedInterval('game', Number(settings.gameIntervalSec ?? 120), {nextGameNumber:state.gameNumber+1,prevWinTeam:w});
+          }
+        }catch(err){ console.error('ゲーム終了画面の再表示にも失敗しました', err); }
+      },0);
+    }
+
+    // 最終状態の同期は完全にバックグラウンド。画面遷移をブロックしない。
+    try{ void pushRemote(); }catch(e){ console.warn('最終点の同期開始に失敗しました', e); }
+    return;
+  }
+
+  // 通常得点だけ従来の描画・同期経路を通す。
+  state.rev += 1;
+  saveActiveMatchLocal();
+  render();
+  void pushRemote();
+}
+
+let pendingFinishTimer = null;
+let retirementInProgress = false;
+let localFinishInProgress = false;
+
+function finishGame(winTeam){
+  // 最終点から結果画面を開くまで、Firebaseの遅延イベントで盤面を巻き戻させない。
+  localFinishInProgress = true;
+  state.status = 'finished';
+  state.winner = winTeam;
+  state.finishedAt = Date.now();
+
+  match.games.push(snapshotState());
+  match.gameWins[winTeam] += 1;
+
+  if(match.gameWins[winTeam] >= match.gamesToWin){
+    match.status = 'finished';
+    match.overallWinner = winTeam;
+    match.finishedAt = state.finishedAt;
+  }
+}
+
+function continueAfterFinishedGame(winTeam){
+  if(!state || state.status!=='finished' || !match){ localFinishInProgress = false; return; }
+  if(match.status==='finished'){
+    openScoreSheet();
+  }else{
+    clearTimeout(pendingFinishTimer);
+    pendingFinishTimer = setTimeout(()=>{ pendingFinishTimer = null; openNextGamePrompt(winTeam); }, 120);
+  }
+  // 画面遷移の保険。同期状態に依存せず、ローカルの終了状態だけで復旧する。
+  setTimeout(()=>{
+    if(!state || state.status!=='finished' || !match){ localFinishInProgress = false; return; }
+    const sheetOpen = !!document.getElementById('sheetOverlay')?.classList.contains('active');
+    const nextOpen = !!document.getElementById('nextGameOverlay')?.classList.contains('active');
+    const confirmOpen = !!document.getElementById('confirmOverlay')?.classList.contains('active');
+    if(sheetOpen || nextOpen || confirmOpen) return;
+    if(match.status==='finished') openScoreSheet();
+    else openNextGamePrompt(winTeam);
+    localFinishInProgress = false;
+  }, 700);
+}
+
+function openNextGamePrompt(prevWinTeam){
+  const nextGameNumber = state.gameNumber + 1;
+  document.getElementById('nextGameMsg').innerHTML =
+    `第${state.gameNumber}ゲーム終了`+
+    `<span class="next-game-scoreline">${fmtTeamName('A')}&nbsp; ${state.score.A} - ${state.score.B} &nbsp;${fmtTeamName('B')}</span>`+
+    `<span class="next-game-count">（ゲームカウント ${match.gameWins.A}-${match.gameWins.B}）</span>`;
+  document.getElementById('nextGameBtn').textContent = `第${nextGameNumber}ゲームへ進む`;
+  pendingNextGame = { gameNumber: nextGameNumber, prevWinTeam };
+  document.getElementById('nextGameOverlay').classList.add('active');
+}
+
+let pendingNextGame = null;
+document.getElementById('nextGameBtn').addEventListener('click', ()=>{
+  if(!pendingNextGame) return;
+  const { gameNumber, prevWinTeam } = pendingNextGame;
+
+  // 次ゲームへの移行はローカルを最優先する。
+  // Firebaseや観戦端末からの応答を待たず、0-0の次ゲームを即座に表示する。
+  const prevLeftTeam = state.leftTeam;
+  pendingNextGame = null;
+  document.getElementById('nextGameOverlay').classList.remove('active');
+  localFinishInProgress = false;
+
+  const newLeftTeam = otherTeam(prevLeftTeam); // ゲームごとにエンドを交代
+  const newFirstServer = settings.players[prevWinTeam][0]; // 前ゲームの勝者側が次ゲームの最初のサーバー
+  const newFirstReceiver = settings.players[otherTeam(prevWinTeam)][0];
+
+  try{
+    startGame(gameNumber, newLeftTeam, newFirstServer, newFirstReceiver);
+  }catch(e){
+    console.error('次ゲームへの移行に失敗しました', e);
+    // オーバーレイだけ消えて操作不能になることを避けるため、再び移行画面を出す。
+    pendingNextGame = { gameNumber, prevWinTeam };
+    document.getElementById('nextGameOverlay').classList.add('active');
+    showToast('次ゲームへの移行に失敗しました。もう一度押してください');
+  }
+});
+
+function undoFinalPoint(){
+  if(historyStack.length === 0) return;
+
+  pendingNextGame = null;
+  document.getElementById('nextGameOverlay').classList.remove('active');
+  sheetOverlay.classList.remove('active');
+
+  undoLast();
+  showBoard();
+}
+
+document.getElementById('nextGameUndoBtn').addEventListener('click', undoFinalPoint);
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.opacity = '1';
+  t.style.transform = 'translateX(-50%) translateY(0)';
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(()=>{
+    t.style.opacity = '0';
+    t.style.transform = 'translateX(-50%) translateY(20px)';
+  }, 2400);
+}
+
+function undoLast(){
+  if(historyStack.length === 0) return;
+  const wasFinishing = state.status !== 'ongoing';
+  const restoredState = historyStack.pop();
+  // 棄権は得点操作ではないため、棄権直前のmatch状態も一緒に保存して巻き戻す。
+  const matchUndo = restoredState && restoredState.__matchUndo ? restoredState.__matchUndo : null;
+  if(restoredState && Object.prototype.hasOwnProperty.call(restoredState, '__matchUndo')) delete restoredState.__matchUndo;
+  state = restoredState;
+  state.rev += 1;
+
+  if(wasFinishing){
+    // 直前の得点でゲーム／試合が終了していた場合は、match側の記録（ゲーム結果・
+    // ゲームカウント・試合終了状態）も一緒に巻き戻す。盤面の通常Undoボタンでも
+    // 次の画面（次ゲームへ進む／スコアシート）のUndoボタンでも、同じ経路で
+    // 安全に巻き戻せるようにするための共通処理。
+    if(pendingFinishTimer){
+      clearTimeout(pendingFinishTimer);
+      pendingFinishTimer = null;
+    }
+    if(match.games.length > 0){
+      const lastGame = match.games[match.games.length - 1];
+      if(lastGame.gameNumber === state.gameNumber){
+        match.games.pop();
+        if(!matchUndo){
+          const w = lastGame.winner;
+          if(w && match.gameWins[w] > 0){
+            match.gameWins[w] -= 1;
+          }
+        }
+      }
+    }
+    if(matchUndo){
+      match.gameWins = {A:Number(matchUndo.gameWinsA)||0, B:Number(matchUndo.gameWinsB)||0};
+      match.status = matchUndo.status || 'ongoing';
+      match.overallWinner = matchUndo.overallWinner || null;
+      match.finishedAt = matchUndo.finishedAt || null;
+      match.retired = !!matchUndo.retired;
+      match.retiredSide = matchUndo.retiredSide || null;
+    }else{
+      match.status = 'ongoing';
+      match.overallWinner = null;
+      match.finishedAt = null;
+    }
+  }
+
+  saveActiveMatchLocal();
+  render();
+  pushRemote();
+}
+
+function changeEnd(){
+  if(!state) return;
+  historyStack.push(snapshotState());
+  state.leftTeam = otherTeam(state.leftTeam);
+  state.rev += 1;
+  render();
+  pushRemote();
+}
+
+function cancelMatchStart(){
+  if(!ensureCourtOperationRight()) return;
+  // 最終点到達直後は state.status が finished になるため、画面遷移が何らかの理由で
+  // 遅れた場合でも『開始取消』を非常口として必ず使えるようにする。
+  if(!state || (state.status !== 'ongoing' && state.status !== 'finished')) return;
+  if(pendingFinishTimer){ clearTimeout(pendingFinishTimer); pendingFinishTimer=null; }
+  pendingNextGame=null;
+  document.getElementById('nextGameOverlay')?.classList.remove('active');
+  document.getElementById('retireOverlay')?.classList.remove('active');
+  sheetOverlay?.classList.remove('active');
+
+  // 大会Now連携時の「開始取消」は配信自体を取り消さない。
+  // コートへの配信は保持したまま「配信済み・開始待ち」に戻し、
+  // バドるの試合設定画面で左右（コート）を入れ替えて再度開始できるようにする。
+  if(taikaLink && taikaLink.enabled && dbReady && db && taikaLink.eventId){
+    const eventRef = db.ref('taikainow/' + taikaLink.eventId);
+    const courtNo = String(taikaLink.courtNo);
+    taikaCancelStartInProgress = true;
+    eventRef.transaction(data=>{
+      if(!data) return data;
+      const courts = Object.assign({}, data.courts || {});
+      const court = courts[courtNo];
+      if(!court || !court.match) return data;
+      courts[courtNo] = Object.assign({}, court, {
+        status:'assigned',
+        live:null,
+        startedAt:null,
+        updatedAt:Date.now()
+      });
+      return Object.assign({}, data, {courts, updatedAt:Date.now()});
+    }).then(()=>{
+      state = null; match = null; historyStack = [];
+      clearActiveMatchLocal();
+      // lastTaikaMatchId は維持する。現在配信中の同じ試合をそのまま設定画面に残す。
+      showSettings();
+      if(taikaCourtData && taikaCourtData.match){
+        applyTaikaMatchToForm(taikaCourtData.match);
+      }
+      renderTaikaStatusHint(Object.assign({}, taikaCourtData||{}, {status:'assigned', live:null, startedAt:null}));
+      taikaCancelStartInProgress = false;
+    }).catch(err=>{
+      taikaCancelStartInProgress = false;
+      console.error('開始取消に失敗しました', err);
+      alert('開始取消に失敗しました。通信状態を確認して、もう一度お試しください。');
+    });
+    return;
+  }
+
+  // 単独利用時は結果を残さず設定画面へ戻す。
+  state = null; match = null; historyStack = [];
+  clearActiveMatchLocal();
+  showSettings();
+}
+
+function retireMatch(retiredSide){
+  if(!ensureCourtOperationRight()) return;
+  if(!state || state.status !== 'ongoing') return;
+  // 棄権操作そのものをUndoできるよう、得点盤面だけでなくmatch側の状態も保存する。
+  const retireUndoState = snapshotState();
+  retireUndoState.__matchUndo = {
+    gameWinsA: match.gameWins.A,
+    gameWinsB: match.gameWins.B,
+    status: match.status,
+    overallWinner: match.overallWinner,
+    finishedAt: match.finishedAt,
+    retired: !!match.retired,
+    retiredSide: match.retiredSide || null
+  };
+  historyStack.push(retireUndoState);
+
+  const winnerSide = retiredSide === 'A' ? 'B' : 'A';
+  state.status = 'finished';
+  state.winner = winnerSide;
+  state.finishedAt = Date.now();
+  state.rev += 1;
+
+  match.games.push(snapshotState());
+  match.gameWins[winnerSide] = match.gamesToWin; // 棄権により、勝者側が試合に必要なゲーム数を獲得したものとして扱う
+  match.status = 'finished';
+  match.overallWinner = winnerSide;
+  match.finishedAt = state.finishedAt;
+  match.retired = true;
+  match.retiredSide = retiredSide;
+
+  retirementInProgress = true;
+  clearActiveMatchLocal();
+  render();
+  // 棄権確定後の画面遷移は通信完了を待たない。Firebaseが遅延/切断しても端末を固めない。
+  // finished状態はバックグラウンド同期し、短時間だけリモート巻き戻りを抑止する。
+  void Promise.resolve(pushRemote()).finally(()=>{});
+  openScoreSheet();
+  setTimeout(()=>{ retirementInProgress = false; }, 1200);
+}
+
+/* ---------- 描画 ---------- */
+const boardEl = document.getElementById('board');
+const settingsEl = document.getElementById('settings');
+const sideLeftEl = document.getElementById('sideLeft');
+const sideRightEl = document.getElementById('sideRight');
+const scoreLeftNum = document.getElementById('scoreLeftNum');
+const scoreRightNum = document.getElementById('scoreRightNum');
+const slotsLeft = document.getElementById('slotsLeft');
+const slotsRight = document.getElementById('slotsRight');
+const undoBtn = document.getElementById('undoBtn');
+
+function showBoard(){
+  settingsEl.classList.remove('active');
+  boardEl.classList.add('active');
+  boardEl.parentElement.classList.add('active'); // .rotor
+}
+function showSettings(){
+  boardEl.classList.remove('active');
+  boardEl.parentElement.classList.remove('active'); // .rotor
+  settingsEl.classList.add('active');
+  renderPastMatches();
+}
+
+function renderSlots(container, team){
+  container.innerHTML = '';
+  const serverTeam = state.serverTeam;
+  const serverPlayer = currentServerPlayer();
+
+  if(settings.matchType === 'singles'){
+    // シングルスは両者ともサーバー側の得点の奇偶で立ち位置（右/左コート）が決まる
+    const name = settings.players[team][0];
+    const isServer = team === serverTeam;
+    const slot = document.createElement('div');
+    slot.className = 'slot singles-player' + (isServer ? ' server' : '');
+    slot.textContent = name;
+    // シングルスの選手名はコート内の立ち位置に追従させず、
+    // 左右それぞれのスコア直下中央に固定する。
+    slot.style.marginLeft = 'auto';
+    slot.style.marginRight = 'auto';
+    container.appendChild(slot);
+    return;
+  }
+
+  const pos = state.positions[team];
+  ['right','left'].forEach(box=>{
+    const name = pos[box];
+    const slot = document.createElement('div');
+    const isServer = (team === serverTeam) && (name === serverPlayer);
+    slot.className = 'slot' + (isServer ? ' server' : '') + (name ? '' : ' empty');
+    slot.textContent = name || '';
+    container.appendChild(slot);
+  });
+}
+
+function renderScoreCards(container, score, style){
+  // 「フリップカード」の見た目をやめ、数字だけをシンプルに大きく表示する
+  container.innerHTML = '';
+  const num = document.createElement('span');
+  num.className = 'plain-score-digits';
+  num.textContent = String(score);
+  if(style){ num.style.fontSize = style.fontSize; }
+  container.appendChild(num);
+}
+
+function computeCardStyle(leftDigits, rightDigits){
+  const zoneL = document.querySelector('#sideLeft .score-zone');
+  const zoneR = document.querySelector('#sideRight .score-zone');
+  if(!zoneL || !zoneR) return null;
+
+  // 横幅・縦幅の両方を使い切れるよう、余白は最小限にする
+  const minW = Math.min(zoneL.clientWidth, zoneR.clientWidth) * 0.995;
+  const minH = Math.min(zoneL.clientHeight, zoneR.clientHeight) * 0.995;
+  if(minW <= 0 || minH <= 0) return null;
+
+  // 1桁→2桁で見た目のサイズが変わらないよう、最初から常に2桁分の横幅を確保しておく
+  // （バドミントンの通常の得点は最大でも2桁のため、これで試合を通して同じ文字サイズを維持できる）
+  const maxDigits = Math.max(2, leftDigits, rightDigits);
+  // 太字の等幅数字1文字あたりの実測目安（フォントサイズに対する横幅の比率）
+  const CHAR_WIDTH_RATIO = 0.56;
+
+  // 横幅だけでなく縦幅も最大限に使うため、両方の制約のうち小さい方に合わせて最大化する
+  // （4:3など縦が長い画面でも、横幅だけに引きずられて小さくなり過ぎないようにする）
+  let size = Math.min(minH, minW / (maxDigits * CHAR_WIDTH_RATIO));
+  size = Math.max(size, 24);
+
+  return { fontSize: size.toFixed(1) + 'px' };
+}
+
+function render(){
+  if(!state || !match) return;
+  if(settings){ if(settings.intervalEnabled==null) settings.intervalEnabled=true; if(settings.midIntervalSec==null) settings.midIntervalSec=60; if(settings.gameIntervalSec==null) settings.gameIntervalSec=120; }
+  const leftTeam = state.leftTeam;
+  const rightTeam = otherTeam(leftTeam);
+
+  const leftScoreStr = String(state.score[leftTeam]);
+  const rightScoreStr = String(state.score[rightTeam]);
+  const cardStyle = computeCardStyle(leftScoreStr.length, rightScoreStr.length);
+
+  renderScoreCards(scoreLeftNum, state.score[leftTeam], cardStyle);
+  renderScoreCards(scoreRightNum, state.score[rightTeam], cardStyle);
+
+  sideLeftEl.classList.toggle('serving', state.serverTeam === leftTeam);
+  sideRightEl.classList.toggle('serving', state.serverTeam === rightTeam);
+
+  renderSlots(slotsLeft, leftTeam);
+  renderSlots(slotsRight, rightTeam);
+
+  undoBtn.disabled = historyStack.length === 0;
+  mirrorTaikaLiveScore();
+
+  const gameBadge = document.getElementById('gameBadge');
+  const setStatus = document.getElementById('setStatus');
+  if(gameBadge){
+    gameBadge.textContent = `第${state.gameNumber}ゲーム`;
+  }
+  if(setStatus){
+    setStatus.textContent = match.format === 'best3'
+      ? `${match.gameWins[leftTeam]} - ${match.gameWins[rightTeam]}`
+      : '';
+  }
+  renderIntervalOverlay();
+}
+
+/* ---------- タップ操作 ---------- */
+sideLeftEl.addEventListener('click', ()=>{
+  if(!ensureCourtOperationRight()) return;
+  if(!state || state.status !== 'ongoing') return;
+  awardPoint(state.leftTeam);
+});
+sideRightEl.addEventListener('click', ()=>{
+  if(!ensureCourtOperationRight()) return;
+  if(!state || state.status !== 'ongoing') return;
+  awardPoint(otherTeam(state.leftTeam));
+});
+
+document.getElementById('undoBtn').addEventListener('click', ()=>{ if(ensureCourtOperationRight()) undoLast(); });
+
+document.getElementById('stopBtn').addEventListener('click', ()=>{
+  if(!ensureCourtOperationRight()) return;
+  openConfirm('試合の開始を取り消しますか？<br><span style="font-size:.78em;font-weight:500;">入力したスコアは破棄され、試合設定画面に戻ります。配信は維持されます。</span>', ()=>{
+    cancelMatchStart();
+  });
+});
+
+document.getElementById('retireBtn').addEventListener('click', ()=>{
+  if(!ensureCourtOperationRight()) return;
+  if(!state || state.status !== 'ongoing') return;
+  document.getElementById('retireA').textContent = fmtTeamName('A') + ' が棄権';
+  document.getElementById('retireB').textContent = fmtTeamName('B') + ' が棄権';
+  document.getElementById('retireOverlay').classList.add('active');
+});
+document.getElementById('retireCancel').addEventListener('click', ()=>{
+  document.getElementById('retireOverlay').classList.remove('active');
+});
+document.getElementById('retireA').addEventListener('click', ()=>{
+  document.getElementById('retireOverlay').classList.remove('active');
+  retireMatch('A');
+});
+document.getElementById('retireB').addEventListener('click', ()=>{
+  document.getElementById('retireOverlay').classList.remove('active');
+  retireMatch('B');
+});
+
+/* ---------- 確認ダイアログ ---------- */
+const confirmOverlay = document.getElementById('confirmOverlay');
+const confirmMsg = document.getElementById('confirmMsg');
+let confirmCb = null;
+function openConfirm(msg, cb){
+  // 確認文では改行・補足表示用の安全な固定HTMLを使用する呼び出しがある
+  confirmMsg.innerHTML = msg;
+  confirmCb = cb;
+  confirmOverlay.classList.add('active');
+}
+document.getElementById('confirmCancel').addEventListener('click', ()=>{
+  confirmOverlay.classList.remove('active');
+  confirmCb = null;
+});
+document.getElementById('confirmOk').addEventListener('click', ()=>{
+  confirmOverlay.classList.remove('active');
+  if(confirmCb) confirmCb();
+  confirmCb = null;
+});
+
+/* ---------- スコアシート ---------- */
+const sheetOverlay = document.getElementById('sheetOverlay');
+const sheetContent = document.getElementById('sheetContent');
+
+function fmtTeamName(team){
+  return settings.players[team].join(' / ');
+}
+
+function clubForPlayer(team, playerName){
+  const arr=(settings && settings.playerClubs && settings.playerClubs[team]) || currentTeamClubs[team] || [];
+  const players=(settings && settings.players && settings.players[team]) || [];
+  const idx=players.indexOf(playerName);
+  return idx>=0 ? (arr[idx]||'') : '';
+}
+function fitClubFontSize(club, maxPx=9){
+  // 約100px幅を基準に、長い所属名ほど自動的に縮小（印刷時も崩れにくい下限5px）
+  const len=Array.from(String(club||'')).length + 2; // （）分
+  return Math.max(5, Math.min(maxPx, Math.floor(92/Math.max(1,len))));
+}
+function playerWithClubHtml(team, playerName, centered=false){
+  const club=clubForPlayer(team,playerName);
+  const align=centered?'text-align:center;':'';
+  return `<span class="sheet-player-name">${playerName}</span>${club?`<span class="sheet-player-club" style="font-size:${fitClubFontSize(club)}px;${align}">（${club}）</span>`:''}`;
+}
+function fmtTeamNameStacked(team){
+  return settings.players[team].map(n=>playerWithClubHtml(team,n,true)).join('<br>');
+}
+
+function playerRowsForTeam(team){
+  return settings.matchType === 'doubles' ? settings.players[team] : [settings.players[team][0]];
+}
+
+function scoreGridPlayerRowHtml(game, team, playerName, totalPoints){
+  const isServerStart = game.initialServer === playerName;
+  const isReceiverStart = game.initialReceiver === playerName;
+
+  // 列＝試合全体のポイント通し番号(seq)。相手チームの得点とも縦の列が重ならないようにする。
+  // 「そのポイントを取った直後に次のサーブを行う選手」の行に、そのチームの得点値を記入する。
+  const bySeq = new Map();
+  game.pointLog.forEach(p=>{
+    if(p.winTeam !== team) return;
+    if(p.serverPlayerAfter !== playerName) return;
+    const sc = team === 'A' ? p.scoreA : p.scoreB;
+    bySeq.set(p.seq, sc);
+  });
+
+  let html = `<td class="player-name">${playerWithClubHtml(team, playerName)}</td>`;
+  html += `<td class="sr-mark">${isServerStart ? 'S' : (isReceiverStart ? 'R' : '')}</td>`;
+  html += `<td class="${(isServerStart || isReceiverStart) ? ('filled' + (team==='B' ? ' team-b' : '')) : ''}">${(isServerStart || isReceiverStart) ? '0' : ''}</td>`;
+
+  for(let seq = 1; seq <= totalPoints; seq++){
+    if(bySeq.has(seq)){
+      html += `<td class="filled${team === 'B' ? ' team-b' : ''}">${bySeq.get(seq)}</td>`;
+    }else{
+      html += `<td></td>`;
+    }
+  }
+  return html;
+}
+
+function gameSectionHtml(gameIndexLabel, game){
+  if(!game){
+    return `
+      <div class="game-section empty">
+        <div class="game-vlabel">${gameIndexLabel}</div>
+        <div class="game-empty-note">（未実施）</div>
+      </div>
+    `;
+  }
+  const totalPoints = game.pointLog.length;
+  const rowsA = playerRowsForTeam('A').map(name=> `<tr>${scoreGridPlayerRowHtml(game, 'A', name, totalPoints)}</tr>`).join('');
+  const rowsB = playerRowsForTeam('B').map(name=> `<tr>${scoreGridPlayerRowHtml(game, 'B', name, totalPoints)}</tr>`).join('');
+  return `
+    <div class="game-section">
+      <div class="game-vlabel">${gameIndexLabel}</div>
+      <div class="score-grid-wrap">
+        <table class="score-grid">
+          ${rowsA}
+          ${rowsB}
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function openScoreSheet(){
+  // 結果画面まで到達した時点で最終点処理のローカルロックを解除する。
+  localFinishInProgress = false;
+  clearTimeout(pendingFinishTimer); pendingFinishTimer = null;
+  const allGames = match.games;
+
+  const startDt = new Date(match.startedAt);
+  const finishDt = new Date(match.finishedAt || Date.now());
+  const dateStr = startDt.toLocaleDateString('ja-JP');
+  const startTimeStr = startDt.toLocaleTimeString('ja-JP', { hour:'2-digit', minute:'2-digit' });
+  const endTimeStr = finishDt.toLocaleTimeString('ja-JP', { hour:'2-digit', minute:'2-digit' });
+
+  const statusLabel = match.status === 'aborted' ? '（試合中止）' : (match.retired ? `（${fmtTeamName(match.retiredSide)} 棄権）` : '');
+  const winnerName = match.overallWinner ? fmtTeamName(match.overallWinner) : null;
+  const eventLabel = settings.matchType === 'doubles' ? 'ダブルス' : 'シングルス';
+
+  const infoLine = (label, value, wrap)=> `<div class="info-line${wrap?' val-wrap':''}"><span class="lbl">${label}：</span><span class="val">${value || ''}</span></div>`;
+
+  const gameSummaryRow = (g)=> g ? `<td class="mini-score">${g.score.A} － ${g.score.B}</td>` : `<td class="mini-score">－</td>`;
+
+  const numGameSlots = match.format === 'best3' ? 3 : 1;
+  const gameLabels = ['第一ゲーム', '第二ゲーム', '第三ゲーム'];
+  const gamesHtml = Array.from({ length: numGameSlots }).map((_, i)=>
+    gameSectionHtml(gameLabels[i], allGames[i] || null)
+  ).join('');
+
+  sheetContent.innerHTML = `
+    <h2 style="text-align:center;">ス　コ　ア　シ　ー　ト（得点用紙）${statusLabel}</h2>
+    <div class="sheet-header-grid">
+      ${infoLine('期日', dateStr)}
+      ${infoLine('種目', eventLabel)}
+      ${infoLine('大会名', settings.tournamentName, true)}
+      ${infoLine('試合番号', settings.matchNumber)}
+      ${infoLine('場所', settings.venueName)}
+      ${infoLine('コート番号', settings.courtNumber)}
+      ${infoLine('開始時間', startTimeStr)}
+      ${infoLine('終了時間', endTimeStr)}
+      <table class="name-score-table">
+        <tr>
+          <td class="lr-tab" rowspan="${numGameSlots}">L</td>
+          <td class="name-box" rowspan="${numGameSlots}">${fmtTeamNameStacked('A')}</td>
+          <td class="game-count" rowspan="${numGameSlots}">${match.gameWins.A}</td>
+          ${gameSummaryRow(allGames[0])}
+          <td class="game-count" rowspan="${numGameSlots}">${match.gameWins.B}</td>
+          <td class="name-box" rowspan="${numGameSlots}">${fmtTeamNameStacked('B')}</td>
+          <td class="lr-tab" rowspan="${numGameSlots}">R</td>
+        </tr>
+        ${numGameSlots > 1 ? `<tr>${gameSummaryRow(allGames[1])}</tr>` : ''}
+        ${numGameSlots > 2 ? `<tr>${gameSummaryRow(allGames[2])}</tr>` : ''}
+      </table>
+    </div>
+
+    ${winnerName ? `<div class="sub">勝者：${winnerName}</div>` : ''}
+
+    ${gamesHtml}
+
+    <div class="sign-row">
+      <div class="sign-cell">勝者署名　＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <div class="sign-cell">主審署名　＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <div class="sign-cell">コール時間　${endTimeStr}</div>
+    </div>
+    <div class="sheet-btns">
+      ${match.status === 'finished' ? '<button class="print-btn" id="sheetUndoBtn">Undo</button>' : ''}
+      <button class="print-btn" id="printBtn">印刷 / PDF保存</button>
+      <button class="new-btn" id="newMatchBtn">終了</button>
+    </div>
+  `;
+
+  document.getElementById('printBtn').addEventListener('click', ()=>window.print());
+  document.getElementById('newMatchBtn').addEventListener('click', ()=>{
+    if(taikaLink && taikaLink.enabled){
+      notifyTaikaMatchFinished({
+        status: match.status,
+        winner: match.overallWinner,
+        gameWinsA: match.gameWins.A,
+        gameWinsB: match.gameWins.B,
+        teamA: settings.players.A,
+        teamB: settings.players.B,
+        finishedAt: match.finishedAt,
+        retired: !!match.retired,
+        retiredSide: match.retired ? match.retiredSide : null
+      });
+    }
+    archiveMatch();
+    sheetOverlay.classList.remove('active');
+    // 大会Now連携時は、終了後に次試合を自分で作成せず、運営側からの配信を待つ。
+    // 現在試合の表示をクリアし、設定画面を「待機状態」として使う。
+    if(taikaLink && taikaLink.enabled){
+      lastTaikaMatchId = null;
+      ['nameA1','nameA2','nameB1','nameB2'].forEach((id)=>{
+        const el=document.getElementById(id); if(el) el.value='';
+      });
+      currentTeamClubs = {A:['',''], B:['','']};
+      renderTeamClubs();
+      refreshPlayerSelects();
+      state = null;
+      match = null;
+      clearActiveMatchLocal();
+    }
+    showSettings();
+    if(taikaLink && taikaLink.enabled){
+      const startBtn=document.getElementById('startBtn');
+      if(startBtn) startBtn.disabled=true;
+      renderTaikaStatusHint({status:'idle', match:null});
+    }
+  });
+  const sheetUndoBtn = document.getElementById('sheetUndoBtn');
+  if(sheetUndoBtn){
+    sheetUndoBtn.addEventListener('click', undoFinalPoint);
+  }
+
+  sheetOverlay.classList.add('active');
+}
+
+function archiveMatch(){
+  if(!dbReady || !matchesRef || !match) return;
+  try{
+    matchesRef.push({
+      finishedAt: match.finishedAt || Date.now(),
+      settings,
+      gameWins: match.gameWins,
+      overallWinner: match.overallWinner,
+      status: match.status,
+      games: match.games
+    });
+  }catch(e){ console.warn('archive失敗', e); }
+}
+
+/* ---------- 過去の試合一覧（設定画面） ---------- */
+function renderPastMatches(){
+  const wrap = document.getElementById('pastMatchesWrap');
+  const list = document.getElementById('pastMatchesList');
+  if(!dbReady || !matchesRef){ wrap.style.display = 'none'; return; }
+
+  matchesRef.orderByChild('finishedAt').limitToLast(10).once('value').then(snap=>{
+    const items = [];
+    snap.forEach(child=>{ items.push({ id: child.key, ...child.val() }); });
+    items.reverse();
+    if(items.length === 0){ wrap.style.display = 'none'; return; }
+    wrap.style.display = 'block';
+    list.innerHTML = items.map(m=>{
+      const d = new Date(m.finishedAt);
+      const names = `${m.settings.players.A.join('/')} vs ${m.settings.players.B.join('/')}`;
+      const gw = m.gameWins || {A:0,B:0};
+      return `<div class="past-row"><span>${d.toLocaleDateString('ja-JP')} ${names} ${gw.A}-${gw.B}</span></div>`;
+    }).join('');
+  }).catch(()=>{ wrap.style.display = 'none'; });
+}
+
+/* ---------- Firebase 同期 ---------- */
+function pushRemote(){
+  if(taikaLink && taikaLink.enabled && !hasCourtOperationRight()) return Promise.resolve(false);
+  // Firebaseの接続状態にかかわらず、まず端末内へ保存する
+  saveActiveMatchLocal();
+  if(!dbReady || !matchRef) return Promise.resolve(false);
+  suppressRemote = true;
+  const write = matchRef.set({ deviceId: DEVICE_ID, ownerAcquiredAt:(courtLockOwner&&courtLockOwner.deviceId===DEVICE_ID)?courtLockOwner.acquiredAt:null, updatedAt:Date.now(), settings, state, match })
+    .then(()=>true).catch(e=>{ console.warn('sync失敗', e); return false; });
+  clearTimeout(remoteApplyTimer);
+  remoteApplyTimer = setTimeout(()=>{ suppressRemote = false; }, 800);
+  return write;
+}
+
+// matchRefListenerTarget は先頭付近で宣言済み（TDZ回避のためここでは宣言しない）
+function subscribeMatchRef(){
+  if(!dbReady) return;
+  if(matchRefListenerTarget){
+    try{ matchRefListenerTarget.off('value'); }catch(e){}
+  }
+  matchRefListenerTarget = matchRef;
+  matchRef.on('value', snap=>{
+    try{
+      const val = snap.val();
+      if(retirementInProgress) return; // 棄権確定中は他端末の直前状態で巻き戻さない
+      if(!val || !val.state || !val.match || !val.match.gameWins) return; // 旧形式データ等は無視
+      if(val.deviceId === DEVICE_ID) return;
+      // 現在の操作権所有者以外が遅れて書いたデータは採用しない。
+      // 操作権移行直後に旧端末の書込みが飛び込んでも、スコアを巻き戻さないためのフェンス。
+      if(taikaLink && taikaLink.enabled && courtLockOwner && courtLockOwner.deviceId && val.deviceId !== courtLockOwner.deviceId) return;
+      // 自端末が操作権を持っている間は、他端末由来のcurrentMatchを絶対に盤面へ適用しない。
+      // takeover直後の旧操作端末の遅延書込みによる操作不能・逆戻りを防ぐ。
+      if(hasCourtOperationRight()) return;
+      // 観戦中断中はデータ監視だけ継続し、得点盤へ自動復帰しない。
+      if(spectatorViewingPaused && !hasCourtOperationRight()) return;
+      // suppressRemote は自端末が書き込んだ直後の反射防止用。
+      // 観戦モードでは自端末から書き込まないため、過去のタイマーが残っていても
+      // 操作端末からの更新を止めない。
+      if(suppressRemote && hasCourtOperationRight()) return;
+      // 観戦端末は操作端末の状態を一方向で受信する。ゲーム終了時(state=finished)も
+      // 15/21点の最終スコアを受け取れるよう、match.statusだけでは除外しない。
+      // 同一revでも ongoing→finished / match finished の状態変化は取り込む。
+      if(state && val.state.rev < state.rev) return;
+      if(state && val.state.rev === state.rev &&
+         val.state.status === state.status && val.match.status === match.status &&
+         Number(val.state.score && val.state.score.A) === Number(state.score && state.score.A) &&
+         Number(val.state.score && val.state.score.B) === Number(state.score && state.score.B)) return;
+
+      settings = val.settings;
+      state = val.state;
+      match = val.match;
+      historyStack = [];
+      saveActiveMatchLocal();
+      showBoard();
+      render();
+      // 観戦端末も最終点を受信したら finished の得点盤で止めず、結果画面へ遷移する。
+      if(state && state.status==='finished' && match && match.status==='finished' && !(state.interval&&state.interval.active)){
+        openScoreSheet();
+      }
+    }catch(e){
+      console.warn('リモート同期データの反映に失敗しました（無視します）', e);
+    }
+  });
+}
+subscribeMatchRef();
+
+/* ---------- 画面向き変更時の再描画 ---------- */
+window.addEventListener('resize', ()=>{ if(state) render(); });
+window.addEventListener('orientationchange', ()=>{ setTimeout(()=>{ if(state) render(); }, 200); });
+
+/* ---------- 再読み込み・タブ終了直前にも最新状態を保存 ---------- */
+window.addEventListener('pagehide', saveActiveMatchLocal);
+window.addEventListener('beforeunload', saveActiveMatchLocal);
+
+/* ---------- 初期表示 ---------- */
+// 進行中データが端末内に残っていれば盤面を即時復元。なければ通常の設定画面へ。
+document.getElementById('courtBadgeSettings')?.addEventListener('click', openCourtSelector);
+document.getElementById('courtSelectCancel')?.addEventListener('click',()=>document.getElementById('courtSelectOverlay')?.classList.remove('active'));
+
+if(!restoreActiveMatchLocal()) showSettings();
+</script>
+</body>
+</html>
